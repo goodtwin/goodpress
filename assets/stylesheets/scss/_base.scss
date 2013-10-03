@@ -1,0 +1,81 @@
+@import "bourbon/bourbon";
+
+// 	# Colors
+//	## Brand
+
+//	### Brand Variations
+
+//	## Neutrals
+$black: #000000;
+$white: #ffffff;
+
+//	# Font
+
+//	# Spacing/Sizing
+$stdRound: 8px;
+$gutter: 0.25em;
+
+@mixin stdRound() {
+	border-radius: $stdRound;
+}
+
+@mixin round($roundVal){
+	border-radius: $roundVal;
+}
+
+
+//	# Shadows
+$stdShadowSize: 0px 1px 3px 0px;
+$stdShadowColor: rgba($black, 0.75);
+
+@mixin stdShadowAll(){
+	box-shadow: $stdShadowSize $stdShadowColor
+}
+
+// # Buttons
+@mixin btnShared() {
+	@include inline-block();
+	@include stdRound();
+	text-align: center;
+	border: 0;
+}
+
+@mixin btnPrimary(){
+	background-color: $white;
+	color: $black;
+
+	&:hover {
+	}
+
+}
+
+
+// # Image
+@mixin photoOverlay() { // just add rgba()
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+// # Icons
+@mixin iconFont(){
+	font-family: "icomoon";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+// # Media Queries
+@mixin std-width-media {
+	@media screen and (min-width:760px){
+		@content;
+	}
+}

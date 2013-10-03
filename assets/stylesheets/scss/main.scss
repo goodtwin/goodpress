@@ -1,0 +1,45 @@
+@import "bourbon/bourbon";
+@import "base";
+
+* {
+	@include box-sizing(border-box);
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	margin: 0;
+	font-size: 100%;
+}
+
+body, p, h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
+p {
+	line-height: 1.618em;
+}
+
+h5, .h5 {
+
+}
+h4, .h4 {
+
+}
+h3, .h3 {
+
+}
+h2, .h2 {
+
+}
+h1, .h1 {
+
+}
+
+a, a:hover, a:visited {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
