@@ -7,7 +7,7 @@ Plugin-theme hybrid based on our heavily modified, simplified, [GoodTwinized for
 We saw that we always deferred to the Grunt.js method of doing things when possible.
 
 
-Download and dump is all you need to do here.
+**Download and dump is all you need to do here.**
 
 ---
 
@@ -27,3 +27,4 @@ What we didn't:
 	* (read: GRUNT ALL THE THINGS)
 * Compilation
 	* Did we mention Grunt yet?
+* Admin settings/page
