@@ -1,7 +1,8 @@
 # GoodPress
 
 >It is well that ~~war~~ Wordless is so ~~terrible~~ intrusive&mdash;otherwise we would grow too fond of it.
--- ~~Robert E. Lee~~ GoodTwin
+>
+>-- ~~Robert E. Lee~~ GoodTwin
 
 Plugin-theme hybrid based on our heavily modified, simplified, [GoodTwinized fork](https://github.com/goodtwin/wordless) of [Wordless](https://github.com/welaika/wordless).
 
