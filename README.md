@@ -4,10 +4,10 @@
 
 Plugin-theme hybrid based on our heavily modified, simplified, [GoodTwinized fork](https://github.com/goodtwin/wordless) of [Wordless](https://github.com/welaika/wordless).
 
-We saw that we always deferred to the Grunt.js method of doing things when possible.
+We saw that we always deferred to the Grunt.js method of doing things when possible, so we slimmed and trimmed.
 
 
-**Download and dump is all you need to do here.**
+**Download and dump in theme directory is all you need to do here.**
 
 ---
 
