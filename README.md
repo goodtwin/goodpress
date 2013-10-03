@@ -1,8 +1,6 @@
 # GoodPress
 
-#### It is well that ~~war~~ Wordless is so ~~terrible~~ intrusive&mdash;otherwise we would grow too fond of it.*
-
----
+#### It is well that ~~war~~ Wordless is so ~~terrible~~ intrusive&mdash;otherwise we would grow too fond of it.
 
 Plugin-theme hybrid based on our heavily modified, simplified, [GoodTwinized fork](https://github.com/goodtwin/wordless) of [Wordless](https://github.com/welaika/wordless).
 
@@ -10,6 +8,8 @@ We saw that we always deferred to the Grunt.js method of doing things when possi
 
 
 Download and dump is all you need to do here.
+
+---
 
 
 What we kept:
