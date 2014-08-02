@@ -15,6 +15,18 @@ module.exports = function( grunt ) {
 
 	grunt.initConfig({
 
+		// requries wp-cli (http://wp-cli.org/)
+		shell: {
+			initWordpress: {
+				options: {
+					execOptions: {
+						cwd: "app/"
+					}
+				},
+				command: 'wp core download'
+			}
+		},
+
 		watch: {
 			reload: {
 				files: ['<%= globalConfig.themeDir  %>/assets/stylesheets/**/*.scss'],
