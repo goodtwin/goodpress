@@ -7,29 +7,40 @@ module.exports = function( grunt ) {
 	// needing to set for every site. These are only often changed values.
 	// We suggest you consult the entire configuration and ensure
 	// it fits your site.
-  var globalConfig = {
-		name: 'goodpress',
-    themeDir: 'app/wp-content/themes/goodpress',
-		distThemeUrl: 'dist/wp-content/themes/goodpress'
-  };
-
 	grunt.initConfig({
-
+		config: require('./config.json'),
 		// requries wp-cli (http://wp-cli.org/)
-		shell: {
+		exec: {
 			initWordpress: {
-				options: {
-					execOptions: {
-						cwd: "app/"
-					}
-				},
-				command: 'wp core download'
+				cwd: "app/",
+				cmd: 'wp core download'
+			},
+			initConfig: {
+				cwd: "app/",
+				cmd: function() {
+					var config = grunt.config.get('config.wp.db');
+					return 'wp core config' +
+						' --dbname=' + config.name +
+						' --dbuser=' + config.user +
+						' --dbpass=' + config.pwd +
+						' --dbhost=localhost:/opt/boxen/data/mysql/socket';
+				}
+			},
+			initPlugin: {
+				cwd: "app/",
+				cmd: function() {
+					var _ = require('lodash');
+					return _(grunt.config.get('config.wp.plugins')).map(
+						function(plugin){
+							return 'wp plugin install ' + plugin + ' --activate';
+						}).join(' && ');
+				}
 			}
 		},
 
 		watch: {
 			reload: {
-				files: ['<%= globalConfig.themeDir  %>/assets/stylesheets/**/*.scss'],
+				files: ['<%= config.themeDir  %>/assets/stylesheets/**/*.scss'],
 				tasks: 'compile'
 			}
 		},
@@ -38,9 +49,9 @@ module.exports = function( grunt ) {
 			dev: {
 				files: [{
 					expand: true,
-					cwd: '<%= globalConfig.themeDir  %>/assets/stylesheets/scss',
+					cwd: '<%= config.themeDir  %>/assets/stylesheets/scss',
 					src: ['*.scss', '!_*.scss'],
-					dest: '<%= globalConfig.themeDir  %>/assets/stylesheets/css',
+					dest: '<%= config.themeDir  %>/assets/stylesheets/css',
 					ext: '.css'
 				}]
 			}
@@ -50,9 +61,9 @@ module.exports = function( grunt ) {
 			dev: {
 				files: [{
 					expand: true,
-					cwd: '<%= globalConfig.themeDir  %>/assets/stylesheets/css',
+					cwd: '<%= config.themeDir  %>/assets/stylesheets/css',
 					src: ['*.css'],
-					dest: '<%= globalConfig.themeDir  %>/assets/stylesheets/css',
+					dest: '<%= config.themeDir  %>/assets/stylesheets/css',
 					ext: '.css'
 				}]
 			}
@@ -61,9 +72,9 @@ module.exports = function( grunt ) {
 		cssmin: {
 			dist: {
 				expand: true,
-				cwd: '<%= globalConfig.distThemeDir  %>/assets/stylesheets/css',
+				cwd: '<%= config.distThemeDir  %>/assets/stylesheets/css',
 				src: ['*.css', '!*.min.css'],
-				dest: '<%= globalConfig.distThemeDir  %>/assets/stylesheets/css',
+				dest: '<%= config.distThemeDir  %>/assets/stylesheets/css',
 				ext: '.css'
 			}
 		},
@@ -87,9 +98,9 @@ module.exports = function( grunt ) {
 			},
 			files: {
 				src: [
-					'<%= globalConfig.themeDir  %>/assets/javascripts/*.js',
-					'!<%= globalConfig.themeDir  %>/assets/javascripts/modernizr-custom.js',
-					'<%= globalConfig.themeDir  %>/assets/javascripts/src/*.js'
+					'<%= config.themeDir  %>/assets/javascripts/*.js',
+					'!<%= config.themeDir  %>/assets/javascripts/modernizr-custom.js',
+					'<%= config.themeDir  %>/assets/javascripts/src/*.js'
 				]
 			}
 		},
@@ -120,8 +131,8 @@ module.exports = function( grunt ) {
 
 		modernizr: {
 			devFile : 'remote',
-			outputFile : '<%= globalConfig.themeDir  %>/assets/javascripts/modernizr-custom.js',
-			files : ['<%= globalConfig.themeDir  %>/assets/javascripts/src/**/*.js', '<%= globalConfig.themeDir  %>/assets/stylesheets/scss/**/*.scss']
+			outputFile : '<%= config.themeDir  %>/assets/javascripts/modernizr-custom.js',
+			files : ['<%= config.themeDir  %>/assets/javascripts/src/**/*.js', '<%= config.themeDir  %>/assets/stylesheets/scss/**/*.scss']
 		},
 
 		requirejs: {
@@ -129,12 +140,12 @@ module.exports = function( grunt ) {
 				options: {
 					name: 'main',
 					insertRequire: ['main'],
-					baseUrl: '<%= globalConfig.distThemeDir  %>/assets/javascripts/',
-					mainConfigFile: '<%= globalConfig.distThemeDir  %>/assets/javascripts/config.js',
+					baseUrl: '<%= config.distThemeDir  %>/assets/javascripts/',
+					mainConfigFile: '<%= config.distThemeDir  %>/assets/javascripts/config.js',
 					rawText: { // For our super clever use-preloaded-jquery thing; otherwise all the things break
 						'jquery': 'define("jquery",function(){return window.jQuery;});'
 					},
-					out: '<%= globalConfig.distThemeDir  %>/assets/javascripts/scripts.js',
+					out: '<%= config.distThemeDir  %>/assets/javascripts/scripts.js',
 					optimize: 'uglify2',
 					uglify2: {
 						beautify: false,
@@ -153,22 +164,22 @@ module.exports = function( grunt ) {
 			},
 			require: {
 				files: {
-					'<%= globalConfig.distThemeDir  %>/assets/javascripts/lib/requirejs/require.min.js': ['<%= globalConfig.distThemeDir  %>/assets/javascripts/lib/requirejs/require.js']
+					'<%= config.distThemeDir  %>/assets/javascripts/lib/requirejs/require.min.js': ['<%= config.distThemeDir  %>/assets/javascripts/lib/requirejs/require.js']
 				}
 			},
 			dist: {
 				files: [{
 					expand: true,
-					cwd: '<%= globalConfig.distThemeDir  %>/assets/javascripts/',
+					cwd: '<%= config.distThemeDir  %>/assets/javascripts/',
 					src: ['*.js', 'src/*.js', 'lib/requirejs/require.js'],
-					dest: '<%= globalConfig.distThemeDir  %>/assets/javascripts/'
+					dest: '<%= config.distThemeDir  %>/assets/javascripts/'
 				}]
 			}
 		},
 
 		replace: {
 			require: {
-				src: ['<%= globalConfig.distThemeDir  %>/templates/base.twig'],
+				src: ['<%= config.distThemeDir  %>/templates/base.twig'],
 				overwrite: true,
 				replacements: [
 					{
@@ -178,7 +189,7 @@ module.exports = function( grunt ) {
 				]
 			},
 			modernizr: {
-				src: ['<%= globalConfig.distThemeDir  %>/templates/partials/head.twig'],
+				src: ['<%= config.distThemeDir  %>/templates/partials/head.twig'],
 				overwrite: true,
 				replacements: [
 					{
@@ -192,14 +203,14 @@ module.exports = function( grunt ) {
 		rsync: {
 			staging: {
 				src: 'dist/',
-				dest: '/var/www/<%= globalConfig.name  %>',
+				dest: '/var/www/<%= config.name  %>',
 				host: '',
 				recursive: true,
 				syncDest: true
 			},
 			prod: {
 				src: 'dist/',
-				dest: '/var/www/<%= globalConfig.name  %>',
+				dest: '/var/www/<%= config.name  %>',
 				host: '',
 				recursive: true,
 				syncDest: true
@@ -212,28 +223,28 @@ module.exports = function( grunt ) {
 			},
 			local: {
 				title: 'Local',
-				database: '<%= globalConfig.name  %>_development',
-				user: '<%= globalConfig.name  %>_dev',
+				database: '<%= config.name  %>_development',
+				user: '<%= config.name  %>_dev',
 				pass: '',
 				host: 'localhost:/opt/boxen/data/mysql/socket',
-				url: '<%= globalConfig.name  %>.dev'
+				url: '<%= config.name  %>.dev'
 			},
 			staging: {
 				title: 'Staging',
-				database: '<%= globalConfig.name  %>_staging',
-				user: '<%= globalConfig.name  %>_stg',
+				database: '<%= config.name  %>_staging',
+				user: '<%= config.name  %>_stg',
 				pass: '',
 				host: 'localhost',
-				url: '<%= globalConfig.name  %>.cronut.goodtwin.co',
+				url: '<%= config.name  %>.cronut.goodtwin.co',
 				ssh_host: ''
 			},
 			prod: {
 				title: 'Production',
-				database: '<%= globalConfig.name  %>_prod',
-				user: '<%= globalConfig.name  %>_prod',
+				database: '<%= config.name  %>_prod',
+				user: '<%= config.name  %>_prod',
 				pass: '',
 				host: 'localhost',
-				url: '<%= globalConfig.name  %>.goodtwin.co',
+				url: '<%= config.name  %>.goodtwin.co',
 				ssh_host: ''
 			}
 		}

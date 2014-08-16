@@ -1,3 +1,4 @@
+node_modules
 app/wp-admin/
 app/wp-includes
 app/*.php
@@ -6,7 +7,5 @@ app/*.html
 app/wp-content/index.php
 app/wp-content/plugins/
 app/wp-content/themes/
-!app/wp-content/themes/goodpress
-
-
-node_modules
+!app/wp-content/themes/goodpress/*
+backups/
