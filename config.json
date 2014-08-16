@@ -1,0 +1,22 @@
+{
+  "name": "goodpress",
+  "themeDir": "app/wp-content/themes/goodpress",
+  "distThemeUrl": "dist/wp-content/themes/goodpress",
+  "wp": {
+    "plugins": [
+      "timber",
+      "pods",
+      "jetpack"
+    ],
+    "db": {
+      "user": "goodpress_user",
+      "pwd": "ALLTHETHINGS",
+      "name": "goodpress_dev"
+    }
+  },
+  "env": {
+    "dev": "dev",
+    "staging": "cronut.goodtwin.com",
+    "prod": "com"
+  }
+}
