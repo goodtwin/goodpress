@@ -26,7 +26,7 @@ module.exports = function( grunt ) {
 						' --dbhost=localhost:/opt/boxen/data/mysql/socket';
 				}
 			},
-			initPlugin: {
+			initPlugins: {
 				cwd: "app/",
 				cmd: function() {
 					var _ = require('lodash');
@@ -227,7 +227,7 @@ module.exports = function( grunt ) {
 				user: '<%= config.name  %>_dev',
 				pass: '',
 				host: 'localhost:/opt/boxen/data/mysql/socket',
-				url: '<%= config.name  %>.dev'
+				url: '<%= config.name  %>.<%= config.env.dev  %>'
 			},
 			staging: {
 				title: 'Staging',
@@ -235,7 +235,7 @@ module.exports = function( grunt ) {
 				user: '<%= config.name  %>_stg',
 				pass: '',
 				host: 'localhost',
-				url: '<%= config.name  %>.cronut.goodtwin.co',
+				url: '<%= config.name  %>.<%= config.env.staging  %>.cronut.goodtwin.co',
 				ssh_host: ''
 			},
 			prod: {
@@ -255,6 +255,7 @@ module.exports = function( grunt ) {
 
 	require('load-grunt-tasks')(grunt);
 
+	grunt.registerTask('init', ['exec:initWordpress', 'exec:initConfig', 'exec:initPlugins']);
 	grunt.registerTask('default', ['compile']);
 	grunt.registerTask('compile', ['sass:dev', 'myth:dev']);
 	grunt.registerTask('pr', ['compile', 'jshint']);
