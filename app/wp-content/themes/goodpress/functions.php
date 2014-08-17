@@ -1,7 +1,14 @@
 <?php
+// Where the twigs be at.
+Timber::$dirname = 'templates';
+
+Timber::add_route('landing', function($params){
+  wp_redirect(home_url());
+});
 
 /**
- * Wordless holds all the plugin setup and initialization.
+ * Pay No Attention To The Man Behind The Curtain.
+ * Wordless setup and initialization.
  */
 class Wordless {
 

@@ -12,11 +12,12 @@
  * For a list of conditional tags, please see here: http://codex.wordpress.org/Conditional_Tags
  */
 
-if (is_single()) {
-  render_view("posts/single");
-} else if (is_archive()) {
-  render_view("posts/archive");
-} else {
-  render_view("posts/404");
+if (is_front_page() || is_page('Landing')) {
+	render_view('pages/landing');
 }
-
+else if (is_page('Gallery')) {
+    render_view('pages/gallery');
+}
+else if (is_page('For Kids')) {
+	render_view('pages/forkids');
+}

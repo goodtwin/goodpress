@@ -7,7 +7,7 @@ class RenderHelper {
     die();
   }
 
-  function render_template($name, $locals = array()) {
+  function render_view($name, $locals = array()) {
     $valid_filenames = array("$name.html.php", "$name.php");
     foreach ($valid_filenames as $filename) {
       $path = Wordless::join_paths(Wordless::theme_views_path(), $filename);
@@ -45,13 +45,13 @@ class RenderHelper {
     render_template($current_view);
   }
 
-  function render_view($name, $layout = 'default', $locals = array()) {
-    ob_start();
-    global $current_view;
-    $current_view = $name;
-    render_template("layouts/$layout", $locals);
-    ob_flush();
-  }
+  // function render_view($name, $layout = 'default', $locals = array()) {
+  //   ob_start();
+  //   global $current_view;
+  //   $current_view = $name;
+  //   render_template("layouts/$layout", $locals);
+  //   ob_flush();
+  // }
 }
 
 Wordless::register_helper("RenderHelper");

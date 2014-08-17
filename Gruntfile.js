@@ -15,6 +15,18 @@ module.exports = function( grunt ) {
 				cwd: "app/",
 				cmd: 'wp core download'
 			},
+			installWordpress: {
+				cwd: "app/",
+				cmd: function() {
+					var config = grunt.config.get('config.wp');
+					return 'wp core install' +
+					' --url=' + config.url +
+					' --title=' + config.title +
+					' --admin_password=' + config.admin.password +
+					' --admin_user=' + config.admin.user +
+					' --admin_email=' + config.admin.email;
+				}
+			},
 			initConfig: {
 				cwd: "app/",
 				cmd: function() {
@@ -223,8 +235,8 @@ module.exports = function( grunt ) {
 			},
 			local: {
 				title: 'Local',
-				database: '<%= config.name  %>_development',
-				user: '<%= config.name  %>_dev',
+				database: '<%= config.db.name  %>_development',
+				user: '<%= config.db.user  %>_user',
 				pass: '',
 				host: 'localhost:/opt/boxen/data/mysql/socket',
 				url: '<%= config.name  %>.<%= config.env.dev  %>'

@@ -1,17 +1,25 @@
 {
-  "name": "goodpress",
+  "name": "lesliewirickart",
   "themeDir": "app/wp-content/themes/goodpress",
   "distThemeUrl": "dist/wp-content/themes/goodpress",
   "wp": {
+    "url": "lesliewirickart.dev",
+    "title": "LeslieWirickArt",
     "plugins": [
-      "timber",
+      "advanced-custom-fields",
+      "timber-library",
       "pods",
       "jetpack"
     ],
+    "admin" : {
+      "user": "lwirick",
+      "email" : "awirick@gmail.com",
+      "pwd" : "l3slieWirick"
+    },
     "db": {
-      "user": "goodpress_user",
+      "user": "lwart_user",
       "pwd": "ALLTHETHINGS",
-      "name": "goodpress_dev"
+      "name": "lwart_development"
     }
   },
   "env": {
