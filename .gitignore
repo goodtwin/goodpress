@@ -1,4 +1,6 @@
 node_modules
+.DS_Store
+.php-version
 app/wp-admin/
 app/wp-includes
 app/*.php
@@ -6,6 +8,8 @@ app/license.txt
 app/*.html
 app/wp-content/index.php
 app/wp-content/plugins/
-app/wp-content/themes/
-!app/wp-content/themes/goodpress/*
+app/wp-content/themes/*.php
+app/wp-content/themes/twenty*
+!app/wp-content/themes/goodpress/
+!app/wp-content/themes/goodpress/**/*
 backups/
