@@ -1,0 +1,10 @@
+@import "prototype";
+@import "styleguide";
+
+@if use-theme(menu) {
+  @include menu-prototype;
+}
+
+@if use-theme(menu, styleguide) {
+  @include menu-styleguide;
+}

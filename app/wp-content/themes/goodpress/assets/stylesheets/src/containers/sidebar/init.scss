@@ -1,0 +1,5 @@
+@import "sidebar";
+
+@if use(sidebar) {
+  @include sidebar-src;
+}

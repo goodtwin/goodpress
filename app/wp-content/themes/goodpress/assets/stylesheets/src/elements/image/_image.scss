@@ -1,0 +1,99 @@
+/*
+ * # Semantic - Image
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@mixin image-src {
+  /*******************************
+               Image
+  *******************************/
+
+  .ui.image {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+  img.ui.image {
+    display: block;
+    background: none;
+  }
+  .ui.image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*******************************
+              States
+  *******************************/
+
+
+  .ui.disabled.image {
+    cursor: default;
+  }
+
+
+  /*******************************
+            Variations
+  *******************************/
+
+  /*--------------
+       Fluid
+  ---------------*/
+
+  .ui.fluid.images,
+  .ui.fluid.image,
+  .ui.fluid.images img,
+  .ui.fluid.image img {
+    display: block;
+    width: 100%;
+  }
+
+
+  /*--------------
+       Avatar
+  ---------------*/
+
+  .ui.avatar.images .image,
+  .ui.avatar.images img,
+  .ui.avatar.image img,
+  .ui.avatar.image {
+      display: inline-block;
+  }
+
+
+
+  /*-------------------
+         Floated
+  --------------------*/
+
+  .ui.floated.image,
+  .ui.floated.images {
+    float: left;
+  }
+  .ui.right.floated.images,
+  .ui.right.floated.image {
+    float: right;
+  }
+
+
+  /*******************************
+                Groups
+  *******************************/
+
+  .ui.images {
+    font-size: 0em;
+  }
+
+  .ui.images .image,
+  .ui.images img {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,9 @@
+@mixin fullbleed-src {
+  body {
+
+    &[fullbleed] {
+      margin: 0;
+      height: 100vh;
+    }
+  }
+}

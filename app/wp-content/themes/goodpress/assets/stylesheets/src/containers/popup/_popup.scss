@@ -1,0 +1,121 @@
+/*
+ * # Semantic - Popup
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+@mixin popup-src {
+  /*******************************
+              Popup
+  *******************************/
+
+  .ui.popup {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 900;
+  }
+
+
+  .ui.popup:before {
+    position: absolute;
+    content: "";
+    z-index: 2;
+  }
+
+  .ui.popup .ui.button {
+    width: 100%;
+  }
+
+  /*******************************
+              Types
+  *******************************/
+
+  /*--------------
+       Spacing
+  ---------------*/
+
+  /*--------------
+       Pointer
+  ---------------*/
+
+  /*--- Below ---*/
+  .ui.bottom.center.popup:before {
+    left: 50%;
+    right: auto;
+    bottom: auto;
+  }
+
+  .ui.bottom.left.popup:before {
+    bottom: auto;
+    left: auto;
+  }
+
+  .ui.bottom.right.popup:before {
+    right: auto;
+    bottom: auto;
+  }
+
+  /*--- Above ---*/
+  .ui.top.center.popup:before {
+    top: auto;
+    right: auto;
+    left: 50%;
+  }
+
+  .ui.top.left.popup:before {
+    top: auto;
+    left: auto;
+  }
+  .ui.top.right.popup:before {
+    top: auto;
+    right: auto;
+  }
+
+  /*--- Left Center ---*/
+  .ui.left.center.popup:before {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+  }
+
+  /*--- Right Center  ---*/
+  .ui.right.center.popup:before {
+    top: 50%;
+    bottom: auto;
+    right: auto;
+  }
+
+  /*******************************
+              States
+  *******************************/
+
+  .ui.loading.popup {
+    display: block;
+    visibility: hidden;
+  }
+
+  .ui.animating.popup,
+  .ui.visible.popup {
+    display: block;
+  }
+
+
+  /*******************************
+              Variations
+  *******************************/
+
+  /*--------------
+        Size
+  ---------------*/
+
+
+  /*--------------
+       Colors
+  ---------------*/
+}

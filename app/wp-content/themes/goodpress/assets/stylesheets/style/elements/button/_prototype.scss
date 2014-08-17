@@ -1,0 +1,300 @@
+@mixin button-prototype {
+	/*******************************
+				Button
+	*******************************/
+	.ui.button {
+		background-color: palette(neutral, mid);
+		color: palette(neutral, light);
+		font-size: 1rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-style: normal;
+		-webkit-tap-highlight-color: rgba(0,0,0, 0);
+	}
+
+	/*******************************
+				States
+	*******************************/
+	.ui.button {
+		/*--------------
+			Active
+		---------------*/
+		&.active{
+			background-color: palette(neutral, mid, 105);
+		}
+		/*--------------
+			Hover
+		---------------*/
+		&:hover,
+		&.active:hover  {
+			background-color: palette(neutral, mid, 110);
+		}
+		/*--------------
+			Down
+		---------------*/
+		&:active,
+		&.active:active {
+			background-color: palette(neutral, mid, 120);
+		}
+		/*--------------
+			Loading
+		---------------*/
+		&.loading {
+			position: relative;
+			cursor: default;
+			background-color: palette(neutral, light) !important;
+			color: transparent !important;
+			transition: all 0s linear;
+
+			&:after {
+				position: absolute;
+				top: 0em;
+				left: 0em;
+				width: 100%;
+				height: 100%;
+				content: '';
+				background: transparent url(../assets/images/loader-mini.gif) no-repeat 50% 50%;
+			}
+
+			&.labeled.icon .icon {
+				background-color: transparent;
+				box-shadow: none;
+			}
+		}
+		/*-------------------
+			Disabled
+		--------------------*/
+		&.disabled,
+		&.disabled:hover,
+		&.disabled.active {
+			cursor: default;
+			opacity: 0.3 !important;
+		}
+	}
+
+	/*******************************
+				Types
+	*******************************/
+	.ui.button {
+		/*-------------------
+			Primary
+		--------------------*/
+		&.primary {
+			background-color: palette(button, primary);
+
+			&:hover,
+			&.active {
+				background-color: palette(button, primary, 110);
+			}
+
+			&:active {
+				background-color: palette(button, primary, 105);
+			}
+		}
+		/*-------------------
+			Secondary
+		--------------------*/
+		&.secondary {
+			background-color: palette(button, secondary);
+
+			&:hover,
+			&.active {
+				background-color: palette(button, secondary, 110);
+			}
+
+			&:active {
+				background-color: palette(button, secondary, 105);
+			}
+		}
+		/*-------------------
+			Social
+		--------------------*/
+		/* Facebook */
+		&.facebook {
+			background-color: palette(social, facebook);
+
+			&:hover {
+				background-color: palette(social, facebook, 110);
+			}
+
+			&:active {
+				background-color: palette(social, facebook, 105);
+			}
+		}
+
+		/* Twitter */
+		&.twitter {
+			background-color: palette(social, twitter);
+
+			&:hover {
+				background-color: palette(social, twitter, 110);
+			}
+
+			&:active {
+				background-color: palette(social, twitter, 105);
+			}
+		}
+
+		/* Google Plus */
+		&.google.plus {
+			background-color: palette(social, googleplus);
+
+			&:hover {
+				background-color: palette(social, googleplus, 110);
+			}
+
+			&:active {
+				background-color: palette(social, googleplus, 105);
+			}
+		}
+
+		/* LinkedIn */
+		&.linkedin {
+			background-color: palette(social, linkedin);
+
+			&:hover {
+				background-color: palette(social, linkedin, 110);
+			}
+
+			&:active {
+				background-color: palette(social, linkedin, 105);
+			}
+		}
+
+		/* YouTube */
+		&.youtube {
+			background-color: palette(social, youtube);
+
+			&:hover {
+				background-color: palette(social, youtube, 110);
+			}
+
+			&:active {
+				background-color: palette(social, youtube, 105);
+			}
+		}
+
+		/* Instagram */
+		&.instagram {
+			background-color: palette(social, instagram);
+
+			&:hover {
+				background-color: palette(social, instagram, 110);
+			}
+
+			&:active {
+				background-color: palette(social, instagram, 105)
+			}
+		}
+
+		/* Pinterest */
+		&.pinterest {
+			background-color: palette(social, pinterest);
+
+			&:hover {
+				background-color: palette(social, pinterest, 110);
+			}
+
+			&:active {
+				background-color: palette(social, pinterest, 105);
+			}
+		}
+
+		/* Positive */
+		&.positive {
+			background-color: palette(info, success);
+
+			&:hover {
+				background-color: palette(info, success, 110);
+			}
+
+			&:active {
+				background-color: palette(info, success, 105);
+			}
+		}
+
+		/* negative */
+		&.negative {
+			background-color: palette(info, error);
+
+			&:hover {
+				background-color: palette(info, error, 110);
+			}
+
+			&:active {
+				background-color: palette(info, error, 105);
+			}
+		}
+		/*--------------
+			Icon
+		---------------*/
+		> .icon {
+			margin-right: 0.6em;
+		}
+	}
+
+	/*******************************
+			Variations
+	*******************************/
+	.ui.button, .ui.buttons {
+		/*-------------------
+				Sizes
+		--------------------*/
+		font-size: 1rem;
+
+		&.mini,
+		&.mini .button {
+			font-size: 0.8rem;
+		}
+
+		&.tiny,
+		&.tiny .button {
+			font-size: 0.875em;
+		}
+
+		&.small,
+		&.small .button {
+			font-size: 0.875rem;
+		}
+
+		&.large,
+		&.large .button {
+			font-size: 1.125rem;
+		}
+
+		&.big,
+		&.big .button {
+			font-size: 1.25rem;
+		}
+
+		&.huge,
+		&.huge .button {
+			font-size: 1.375rem;
+		}
+
+		&.massive,
+		&.massive .button {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+		/*--------------
+			Toggle
+		---------------*/
+		/* Toggle (Modifies active state to give affordances) */
+		&.toggle .active.button,
+		&.toggle.active {
+			background-color: palette(info, success) !important;
+
+			&:hover {
+				background-color: palette(info, success, 110) !important;
+			}
+		}
+		/*--------------
+		Labeled Icon
+		---------------*/
+		&.labeled.icon > .button > .icon,
+		&.labeled.icon > .icon {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+	}
+}

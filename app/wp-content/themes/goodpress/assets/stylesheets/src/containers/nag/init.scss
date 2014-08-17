@@ -1,0 +1,5 @@
+@import "nag";
+
+@if use(nag) {
+  @include nag-src;
+}

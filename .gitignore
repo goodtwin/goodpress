@@ -12,4 +12,7 @@ app/wp-content/themes/*.php
 app/wp-content/themes/twenty*
 !app/wp-content/themes/goodpress/
 !app/wp-content/themes/goodpress/**/*
+app/wp-content/themes/goodpress/assets/stylesheets/.sass-cache
+app/wp-content/themes/goodpress/assets/stylesheets/node_modules
+app/wp-content/themes/goodpress/assets/stylesheets/css
 backups/

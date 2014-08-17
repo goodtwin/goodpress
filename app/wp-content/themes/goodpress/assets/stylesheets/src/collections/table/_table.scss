@@ -1,0 +1,253 @@
+/*
+ * # Semantic - Table
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+@mixin table-src {
+  /*******************************
+               Table
+  *******************************/
+
+  /* Prototype */
+  .ui.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  /* Table Content */
+  .ui.table th,
+  .ui.table tr,
+  .ui.table td {
+    border-collapse: collapse;
+  }
+
+  /* Headers */
+  .ui.table th {
+    cursor: auto;
+    vertical-align: middle;
+  }
+
+  /* Table Cells */
+  .ui.table td {
+    vertical-align: middle;
+  }
+
+  /* Icons */
+  .ui.table > .icon {
+    vertical-align: baseline;
+  }
+  .ui.table > .icon:only-child {
+    margin: 0em;
+  }
+
+  /* Table Segment */
+  .ui.table.segment:after {
+    display: none;
+  }
+  .ui.table.segment.stacked:after {
+    display: block;
+  }
+
+
+  /* Responsive */
+
+  @media only screen and (max-width : 768px) {
+    .ui.table {
+      display: block;
+      padding: 0em;
+    }
+    .ui.table thead,
+    .ui.table tfoot {
+      display: none;
+    }
+    .ui.table tbody {
+      display: block;
+    }
+    .ui.table tr {
+      display: block;
+    }
+
+    .ui.table tr > td {
+      width: 100% !important;
+      display: block;
+      border: none !important;
+    }
+  }
+
+  /*******************************
+            Variations
+  *******************************/
+
+  /*--------------
+    Column Count
+  ---------------*/
+
+  .ui.two.column.table td {
+    width: percentage(1/2);
+  }
+  .ui.three.column.table td {
+    width: percentage(1/3);
+  }
+  .ui.four.column.table td {
+    width: percentage(1/4);
+  }
+  .ui.five.column.table td {
+    width: percentage(1/5);
+  }
+  .ui.six.column.table td {
+    width: percentage(1/6);
+  }
+  .ui.seven.column.table td {
+    width: percentage(1/7);
+  }
+  .ui.eight.column.table td {
+    width: percentage(1/8);
+  }
+  .ui.nine.column.table td {
+    width: percentage(1/9);
+  }
+  .ui.ten.column.table td {
+    width: percentage(1/10);
+  }
+  .ui.eleven.column.table td {
+    width: percentage(1/11);
+  }
+  .ui.twelve.column.table td {
+    width: percentage(1/12);
+  }
+  .ui.thirteen.column.table td {
+    width: percentage(1/13);
+  }
+  .ui.fourteen.column.table td {
+    width: percentage(1/14);
+  }
+  .ui.fifteen.column.table td {
+    width: percentage(1/15);
+  }
+  .ui.sixteen.column.table td {
+    width: percentage(1/16);
+  }
+
+  /* Column Width */
+  .ui.table th.one.wide,
+  .ui.table td.one.wide {
+    width: 6.25%;
+  }
+  .ui.table th.two.wide,
+  .ui.table td.two.wide {
+    width: percentage(1/8);
+  }
+  .ui.table th.three.wide,
+  .ui.table td.three.wide {
+    width: 18.75%;
+  }
+  .ui.table th.four.wide,
+  .ui.table td.four.wide {
+    width: percentage(1/4);
+  }
+  .ui.table th.five.wide,
+  .ui.table td.five.wide {
+    width: 31.25%;
+  }
+  .ui.table th.six.wide,
+  .ui.table td.six.wide {
+    width: percentage(3/8);
+  }
+  .ui.table th.seven.wide,
+  .ui.table td.seven.wide {
+    width: 43.75%;
+  }
+  .ui.table th.eight.wide,
+  .ui.table td.eight.wide {
+    width: percentage(1/2);
+  }
+  .ui.table th.nine.wide,
+  .ui.table td.nine.wide {
+    width: 56.25%;
+  }
+  .ui.table th.ten.wide,
+  .ui.table td.ten.wide {
+    width: percentage(5/8);
+  }
+  .ui.table th.eleven.wide,
+  .ui.table td.eleven.wide {
+    width: 68.75%;
+  }
+  .ui.table th.twelve.wide,
+  .ui.table td.twelve.wide {
+    width: percentage(3/4);
+  }
+  .ui.table th.thirteen.wide,
+  .ui.table td.thirteen.wide {
+    width: 81.25%;
+  }
+  .ui.table th.fourteen.wide,
+  .ui.table td.fourteen.wide {
+    width: percentage(6/8);
+  }
+  .ui.table th.fifteen.wide,
+  .ui.table td.fifteen.wide {
+    width: 93.75%;
+  }
+  .ui.table th.sixteen.wide,
+  .ui.table td.sixteen.wide {
+    width: percentage(1/1);
+  }
+
+
+  /*--------------
+       Celled
+  ---------------*/
+
+  .ui.celled.table tbody tr,
+  .ui.celled.table tfoot tr {
+    border: none;
+  }
+
+  /* Coupling with segment */
+  .ui.celled.table.segment th:first-child,
+  .ui.celled.table.segment td:first-child {
+    border-left: none;
+  }
+  .ui.celled.table.segment th:last-child,
+  .ui.celled.table.segment td:last-child {
+    border-right: none;
+  }
+
+  /*--------------
+      Sortable
+  ---------------*/
+
+  .ui.sortable.table thead th {
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .ui.sortable.table thead th.sorted,
+  .ui.sortable.table thead th.sorted:hover {
+    user-select: none;
+  }
+
+  /*--------------
+     Collapsing
+  ---------------*/
+
+  .ui.collapsing.table {
+    width: auto;
+  }
+
+  /*--------------
+        Basic
+  ---------------*/
+
+  .ui.basic.table th {
+    background-color: transparent;
+  }
+  .ui.basic.table tbody tr:nth-child(2n) {
+    background-color: transparent !important;
+  }
+}

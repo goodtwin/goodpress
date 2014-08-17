@@ -1,0 +1,5 @@
+@import "input";
+
+@if use(input) {
+  @include input-src;
+}

@@ -1,0 +1,5 @@
+@import "label";
+
+@if use(label) {
+  @include label-src;
+}

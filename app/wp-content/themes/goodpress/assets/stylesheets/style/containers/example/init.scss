@@ -1,0 +1,5 @@
+@import "styleguide";
+
+@if use-theme(example, styleguide) {
+	@include example-styleguide;
+}

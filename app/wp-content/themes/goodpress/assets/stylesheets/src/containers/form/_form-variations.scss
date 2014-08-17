@@ -1,0 +1,143 @@
+@mixin form-src-variations {
+  /*******************************
+             Variations
+  *******************************/
+
+
+  /*--------------------
+        Fluid Width
+  ---------------------*/
+
+  .ui.form.fluid {
+    width: 100%;
+  }
+
+
+  /*--------------------------
+    Input w/ attached Button
+  ---------------------------*/
+
+  .ui.form input.attached {
+    width: auto;
+  }
+
+  /*--------------------
+        Date Input
+  ---------------------*/
+
+  .ui.form .date.field > label {
+    position: relative;
+  }
+  .ui.form .date.field > label:after {
+    position: absolute;
+  }
+
+
+  /*--------------------
+      Inverted Colors
+  ---------------------*/
+
+  /*--------------------
+       Field Groups
+  ---------------------*/
+
+  /* Grouped Vertically */
+  .ui.form .grouped.fields .field {
+    display: block;
+    float: none;
+  }
+
+
+  /*--------------------
+            Fields
+  ---------------------*/
+
+  /* Split fields */
+  .ui.form .fields {
+    clear: both;
+  }
+  .ui.form .fields:after {
+    content: ' ';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  .ui.form .fields > .field {
+    clear: none;
+    float: left;
+  }
+
+  /* Other Combinations */
+  .ui.form .two.fields > .fields,
+  .ui.form .two.fields > .field {
+    width: percentage(1/2);
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .ui.form .three.fields > .fields,
+  .ui.form .three.fields > .field {
+    width: percentage(1/3);
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .ui.form .four.fields > .fields,
+  .ui.form .four.fields > .field {
+    width: percentage(1/4);
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .ui.form .five.fields > .fields,
+  .ui.form .five.fields > .field {
+    width: percentage(1/5);
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  /* Swap to full width on mobile */
+  @media only screen and (max-width : 767px) {
+    .ui.form .two.fields > .fields,
+    .ui.form .two.fields > .field,
+    .ui.form .three.fields > .fields,
+    .ui.form .three.fields > .field,
+    .ui.form .four.fields > .fields,
+    .ui.form .four.fields > .field,
+    .ui.form .five.fields > .fields,
+    .ui.form .five.fields > .field {
+      width: 100%;
+      padding-left: 0%;
+      padding-right: 0%;
+    }
+  }
+
+  .ui.form .fields .field:first-child {
+    padding-left: 0%;
+  }
+  .ui.form .fields .field:last-child {
+    padding-right: 0%;
+  }
+
+
+  /*--------------------
+      Inline Fields
+  ---------------------*/
+
+  .ui.form .inline.fields .field > label,
+  .ui.form .inline.fields .field > p,
+  .ui.form .inline.fields .field > input,
+  .ui.form .inline.field > label,
+  .ui.form .inline.field > p,
+  .ui.form .inline.field > input {
+    display: inline-block;
+    width: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    vertical-align: middle;
+  }
+
+  .ui.form .inline.fields .field > :only-child,
+  .ui.form .inline.field > :only-child {
+    margin: 0em;
+  }
+}

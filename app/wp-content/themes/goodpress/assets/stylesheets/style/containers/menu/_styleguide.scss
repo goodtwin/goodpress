@@ -1,0 +1,38 @@
+@mixin menu-styleguide {
+  /*--------------
+    Inverted Menu for StyleGguide
+  ---------------*/
+
+  .ui.inverted.menu {
+    background-color: palette(neutral, dark);
+    box-shadow: none;
+
+    .header.item {
+      margin: 0em;
+      background-color: palette(neutral, dark, 125);
+      box-shadow: none;
+    }
+    .item,
+    .item > a {
+      color: palette(neutral, light);
+    }
+    .item .item,
+    .item .item > a {
+      color: palette(neutral, light);
+    }
+    .dropdown .menu .item,
+    .dropdown .menu .item a {
+      color: palette(neutral, dark) !important;
+    }
+    a.item:hover,
+    .item > a:hover,
+    .item .menu a.item:hover,
+    .item .menu .link.item:hover {
+      color: palette(neutral, mid);
+    }
+    .active.item {
+      box-shadow: none !important;
+      background-color: palette(neutral, mid);
+    }
+  }
+}

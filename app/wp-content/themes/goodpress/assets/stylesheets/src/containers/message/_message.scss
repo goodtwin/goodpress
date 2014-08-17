@@ -1,0 +1,139 @@
+/*
+ * # Semantic - Message
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+@mixin message-src {
+  /*******************************
+              Message
+  *******************************/
+
+  .ui.message {
+    position: relative;
+    height: auto;
+  }
+
+  .ui.message:first-child {
+    margin-top: 0em;
+  }
+  .ui.message:last-child {
+    margin-bottom: 0em;
+  }
+
+
+  /*--------------
+       Content
+  ---------------*/
+
+  /* block with headers */
+  .ui.message .header {
+    margin: 0em;
+  }
+
+  /* block with paragraphs */
+  .ui.message p:first-child {
+    margin-top: 0em;
+  }
+  .ui.message p:last-child {
+    margin-bottom: 0em;
+  }
+  .ui.message > :first-child {
+    margin-top: 0em;
+  }
+  .ui.message > :last-child {
+    margin-bottom: 0em;
+  }
+
+  /* block with child list */
+  .ui.message ul.list li {
+    position: relative;
+  }
+  .ui.message ul.list li:before {
+    position: absolute;
+    height: 100%;
+    vertical-align: baseline;
+  }
+  .ui.message ul.list li:first-child {
+    margin-top: 0em;
+  }
+
+  /* dismissable block */
+  .ui.message > .close.icon {
+    cursor: pointer;
+    position: absolute;
+  }
+  .ui.message > .close.icon:hover {
+    opacity: 1;
+  }
+
+
+
+  /*******************************
+              States
+  *******************************/
+
+  .ui.message.visible,
+  .ui.header.visible {
+    display: block !important;
+  }
+  .ui.message.hidden,
+  .ui.header.hidden {
+    display: none;
+  }
+
+  /*******************************
+              Variations
+  *******************************/
+
+  /*--------------
+      Compact
+  ---------------*/
+
+  .ui.compact.message {
+    display: inline-block;
+  }
+
+
+  /*--------------
+      Attached
+  ---------------*/
+
+  .ui.attached.message {
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+  }
+  .ui.attached + .ui.attached.message:not(.top):not(.bottom) {
+    margin-top: -1px;
+  }
+  .ui.bottom.attached.message {
+    margin-top: -1px;
+  }
+  .ui.attached.icon.message {
+    display: block;
+    width: auto;
+  }
+
+
+  /*--------------
+        Icon
+  ---------------*/
+
+  .ui.icon.message {
+    display: table;
+    width: 100%;
+  }
+  .ui.icon.message > .icon:not(.close) {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .ui.icon.message > .content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

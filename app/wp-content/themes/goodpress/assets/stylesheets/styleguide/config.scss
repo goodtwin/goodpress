@@ -1,0 +1,15 @@
+$styleguideConfig: (
+	example: (
+		include: true,
+		theme: (
+			styleguide: true
+		)
+	),
+	menu: (
+		include: true,
+		theme: (
+			prototype: true,
+			styleguide: true
+		)
+	)
+);

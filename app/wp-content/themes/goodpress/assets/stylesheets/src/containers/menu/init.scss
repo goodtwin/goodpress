@@ -1,0 +1,5 @@
+@import "menu";
+
+@if use(menu) {
+  @include menu-src;
+}

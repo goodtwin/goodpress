@@ -1,0 +1,357 @@
+/*
+ * # Semantic - Label
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@mixin label-src {
+  /*******************************
+              Label
+  *******************************/
+
+  .ui.label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .ui.label:first-child {
+    margin-left: 0em;
+  }
+  .ui.label:last-child {
+    margin-right: 0em;
+  }
+
+
+  /* Link */
+  a.ui.label {
+    cursor: pointer;
+  }
+
+  /* Inside Link */
+  .ui.label a {
+    cursor: pointer;
+  }
+  .ui.label a:hover {
+    opacity: 1;
+  }
+
+  /* Detail */
+  .ui.label .detail {
+    display: inline-block;
+  }
+
+  /* Icon */
+  .ui.label .icon {
+    width: auto;
+  }
+
+  /* Removable label */
+  .ui.label .delete.icon {
+    cursor: pointer;
+  }
+  .ui.label .delete.icon:hover {
+    opacity: 1;
+  }
+
+
+  /*-------------------
+         Coupling
+  --------------------*/
+
+  .ui.segment > .bottom.attached.label:first-child ~ :last-child {
+    margin-top: 0em;
+  }
+
+
+  /*******************************
+               Types
+  *******************************/
+
+  .ui.image.label {
+    width: auto !important;
+    vertical-align: baseline;
+  }
+  .ui.image.label img {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  /*******************************
+               States
+  *******************************/
+
+
+  /*-------------------
+        Visible
+  --------------------*/
+
+  .ui.labels.visible .label,
+  .ui.label.visible {
+    display: inline-block !important;
+  }
+
+  /*-------------------
+        Hidden
+  --------------------*/
+
+  .ui.labels.hidden .label,
+  .ui.label.hidden {
+    display: none !important;
+  }
+
+
+
+  /*******************************
+             Variations
+  *******************************/
+
+
+  /*-------------------
+           Tag
+  --------------------*/
+
+  .ui.tag.labels .label,
+  .ui.tag.label {
+    position: relative;
+  }
+  .ui.tag.labels .label:before,
+  .ui.tag.label:before {
+      position: absolute;
+      content: '';
+      background-image: none;
+  }
+
+
+  .ui.tag.labels .label:after,
+  .ui.tag.label:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+  }
+  /*-------------------
+         Ribbon
+  --------------------*/
+
+  .ui.ribbon.label {
+    position: relative;
+  }
+
+  .ui.ribbon.label:after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0%;
+    border-top: 0em solid transparent;
+    border-right-style: solid;
+    border-left: 0em solid transparent;
+    width: 0em;
+    height: 0em;
+  }
+
+  /*-------------------
+         Attached
+  --------------------*/
+
+  .ui.top.attached.label,
+  .ui.attached.label {
+    width: 100%;
+    position: absolute;
+    margin: 0em;
+    top: 0em;
+    left: 0em;
+  }
+  .ui.bottom.attached.label {
+    top: auto;
+    bottom: 0em;
+  }
+
+  .ui.top.left.attached.label {
+    width: auto;
+    margin-top: 0em !important;
+  }
+
+  .ui.top.right.attached.label {
+    width: auto;
+    left: auto;
+    right: 0em;
+  }
+  .ui.bottom.left.attached.label {
+    width: auto;
+    top: auto;
+    bottom: 0em;
+  }
+  .ui.bottom.right.attached.label {
+    top: auto;
+    bottom: 0em;
+    left: auto;
+    right: 0em;
+    width: auto;
+  }
+
+  /*-------------------
+      Corner Label
+  --------------------*/
+
+  .ui.corner.label {
+    background-color: transparent;
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    z-index: 10;
+    margin: 0em;
+    padding: 0em;
+    text-align: center;
+  }
+  .ui.corner.label:after {
+    position: absolute;
+    content: "";
+    right: 0em;
+    top: 0em;
+    z-index: -1;
+    width: 0em;
+    height: 0em;
+    border-top: 0em solid transparent;
+    border-left: 0em solid transparent;
+  }
+
+  .ui.corner.label .text {
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* Coupling */
+  .ui.rounded.image > .ui.corner.label,
+  .ui.input > .ui.corner.label,
+  .ui.segment > .ui.corner.label {
+    overflow: hidden;
+  }
+  .ui.segment > .ui.corner.label {
+    top: -1px;
+    right: -1px;
+  }
+  .ui.segment > .ui.left.corner.label {
+    right: auto;
+    left: -1px;
+  }
+  .ui.input > .ui.corner.label{
+    top: 1px;
+    right: 1px;
+  }
+  .ui.input > .ui.right.corner.label {
+    right: auto;
+    left: 1px;
+  }
+
+
+
+  /* Left Corner */
+  .ui.left.corner.label,
+  .ui.left.corner.label:after {
+    right: auto;
+    left: 0em;
+  }
+  .ui.left.corner.label:after {
+    border-bottom: 0em solid transparent;
+    border-left: 0em solid transparent;
+  }
+
+
+
+
+
+  /*-------------------
+         Fluid
+  --------------------*/
+
+  .ui.label.fluid,
+  .ui.fluid.labels > .label {
+    width: 100%;
+  }
+
+
+  /*-------------------
+       Horizontal
+  --------------------*/
+
+  .ui.horizontal.labels .label,
+  .ui.horizontal.label {
+    text-align: center;
+  }
+
+
+  /*-------------------
+         Circular
+  --------------------*/
+
+  .ui.circular.labels .label,
+  .ui.circular.label {
+    text-align: center;
+    border-radius: 500rem;
+  }
+
+  /*-------------------
+         Pointing
+  --------------------*/
+
+  .ui.pointing.label {
+    position: relative;
+  }
+  .ui.attached.pointing.label {
+    position: absolute;
+  }
+
+  .ui.pointing.label:before {
+    position: absolute;
+    content: "";
+    background-image: none;
+    z-index: 2;
+  }
+  /*--- Above ---*/
+  .ui.pointing.label:before,
+  .ui.pointing.above.label:before {
+    left: 50%;
+  }
+  /*--- Below ---*/
+  .ui.pointing.below.label {
+    margin-top: 0em;
+  }
+  .ui.pointing.below.label:before {
+    top: auto;
+    right: auto;
+    left: 50%;
+  }
+  /*--- Left ---*/
+  .ui.pointing.left.label {
+    margin-top: 0em;
+  }
+  .ui.pointing.left.label:before {
+    bottom: auto;
+    right: auto;
+    top: 50%;
+    left: 0em;
+  }
+  /*--- Right ---*/
+  .ui.pointing.right.label {
+    margin-top: 0em;
+  }
+  .ui.pointing.right.label:before {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+  }
+
+  /*------------------
+     Floating Label
+  -------------------*/
+
+  .ui.floating.label {
+    position: absolute;
+    z-index: 100;
+    left: 100%;
+  }
+}

@@ -1,0 +1,664 @@
+/*
+ * # Semantic - Menu
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+@mixin menu-src {
+  /*******************************
+              Standard
+  *******************************/
+
+  /*--------------
+        Menu
+  ---------------*/
+
+  .ui.menu {
+    font-size: 0px;
+  }
+  .ui.menu:first-child {
+    margin-top: 0rem;
+  }
+  .ui.menu:last-child {
+    margin-bottom: 0rem;
+  }
+
+
+  .ui.menu:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .ui.menu .item {
+    user-select: none;
+    vertical-align: middle;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  /*--------------
+      Colors
+  ---------------*/
+
+
+  /*--------------
+        Items
+  ---------------*/
+
+  .ui.menu .item {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+  }
+
+  .ui.menu .item.left,
+  .ui.menu .menu.left {
+    float: left;
+  }
+  .ui.menu .item.right,
+  .ui.menu .menu.right {
+    float: right;
+  }
+
+
+  /*--------------
+      Borders
+  ---------------*/
+
+  .ui.menu .item:before {
+    position: absolute;
+    content: '';
+    top: 0%;
+    left: 0px;
+    width: 1px;
+    height: 100%;
+  }
+  .ui.menu > .menu:not(.right):first-child > .item:first-child:before,
+  .ui.menu .item:first-child:before {
+    display: none;
+  }
+  .ui.menu .menu.right .item:before,
+  .ui.menu .item.right:before {
+    right: auto;
+    left: 0px;
+  }
+
+  /*--------------
+    Text Content
+  ---------------*/
+
+  .ui.menu .text.item > *,
+  .ui.menu .item > p:only-child {
+    user-select: text;
+  }
+  .ui.menu .item > p:first-child {
+    margin-top: 0px;
+  }
+  .ui.menu .item > p:last-child {
+    margin-bottom: 0px;
+  }
+
+
+  /*--------------
+       Button
+  ---------------*/
+
+  .ui.menu:not(.vertical) .item > .button {
+    position: relative;
+  }
+
+
+  /*--------------
+       Inputs
+  ---------------*/
+
+  .ui.menu:not(.vertical) .item > .input {
+    width: 100%;
+    vertical-align: top;
+  }
+
+
+  /*--------------
+       Header
+  ---------------*/
+
+  .ui.menu .header.item {
+    margin: 0em;
+  }
+
+  /*--------------
+      Dropdowns
+  ---------------*/
+
+  .ui.menu .dropdown .menu .item .icon {
+    float: none;
+  }
+  .ui.menu .dropdown.item .menu {
+    left: 1px;
+    margin: 0px;
+    min-width: calc(100% - 1px);
+  }
+  .ui.secondary.menu .dropdown.item .menu {
+    left: 0px;
+    min-width: 100%;
+  }
+  .ui.menu .simple.dropdown.item .menu {
+    margin: 0px !important;
+  }
+  .ui.menu .dropdown.item .menu .item {
+    width: 100%;
+  }
+  .ui.menu .dropdown.item .menu .active.item {
+    box-shadow: none !important;
+  }
+  .ui.menu .ui.dropdown .menu .item:before {
+    display: none;
+  }
+
+
+  /*--------------
+       Labels
+  ---------------*/
+
+  .ui.menu .item > .label {
+    vertical-align: baseline;
+  }
+
+  /*--------------
+        Images
+  ---------------*/
+
+  .ui.menu .item > img:only-child {
+    display: block;
+    max-width: 100%;
+    margin: 0em auto;
+  }
+
+  /*******************************
+               States
+  *******************************/
+
+  /*--------------
+        Hover
+  ---------------*/
+
+  .ui.link.menu .item:hover,
+  .ui.menu .link.item:hover,
+  .ui.menu a.item:hover,
+  .ui.menu .ui.dropdown .menu .item:hover {
+    cursor: pointer;
+  }
+
+
+  /*--------------
+        Down
+  ---------------*/
+
+  /*--------------
+       Active
+  ---------------*/
+
+  /*--------------
+       Disabled
+  ---------------*/
+
+  .ui.menu .item.disabled,
+  .ui.menu .item.disabled:hover {
+    cursor: default;
+    background-color: transparent !important;
+  }
+
+
+  /*--------------------
+       Loading
+  ---------------------*/
+
+  /* On Form */
+  .ui.menu.loading {
+    position: relative;
+  }
+  .ui.menu.loading:after {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    content: '';
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+  }
+
+
+  /*******************************
+               Types
+  *******************************/
+
+  /*--------------
+      Vertical
+  ---------------*/
+
+  .ui.vertical.menu .item {
+    display: block;
+    height: auto !important;
+  }
+
+  .ui.vertical.menu .item > .label + i.icon {
+    float: none;
+  }
+
+  /*--- Border ---*/
+  .ui.vertical.menu .item:before {
+    position: absolute;
+    content: '';
+    top: 0%;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+  }
+
+  .ui.vertical.menu .item:first-child:before {
+    background-image: none !important;
+  }
+
+  /*--- Dropdown ---*/
+
+  .ui.vertical.menu .dropdown.item .menu {
+    top: 0% !important;
+  }
+
+
+  /*--- Sub Menu ---*/
+  .ui.vertical.menu .item > .menu > .item:before {
+    display: none;
+  }
+
+
+  /*--------------
+       Tiered
+  ---------------*/
+
+  .ui.tiered.menu > .menu .item.active:after {
+    position: absolute;
+    content: '';
+    margin-top: -1px;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+  }
+
+  .ui.tiered.menu .sub.menu .active.item:after {
+    display: none;
+  }
+
+  /* Tiered pointing */
+  .ui.pointing.tiered.menu > .menu > .item:after {
+    display: none;
+  }
+  .ui.pointing.tiered.menu > .sub.menu > .item:after {
+    display: block;
+  }
+
+
+  /*--------------
+       Tabular
+  ---------------*/
+
+  /* Active */
+  .ui.tabular.menu .active.item {
+    position: relative;
+  }
+
+  /* Coupling with segment for attachment */
+  .ui.attached.tabular.menu {
+    position: relative;
+    z-index: 2;
+  }
+
+
+  /*--------------
+     Pagination
+  ---------------*/
+
+  .ui.pagination.menu {
+    margin: 0em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .ui.pagination.menu .icon.item i.icon {
+    vertical-align: top;
+  }
+  .ui.pagination.menu.floated {
+    display: block;
+  }
+
+
+  /*--------------
+     Secondary
+  ---------------*/
+
+  .ui.secondary.menu > .menu > .item,
+  .ui.secondary.menu > .item {
+    height: auto !important;
+  }
+  .ui.secondary.menu > .menu > .item:before,
+  .ui.secondary.menu > .item:before {
+    display: none !important;
+  }
+
+
+  /* hover */
+  .ui.secondary.menu .link.item:hover,
+  .ui.secondary.menu a.item:hover {
+    opacity: 1;
+  }
+
+  /* active */
+  .ui.secondary.menu > .menu > .active.item,
+  .ui.secondary.menu > .active.item {
+    opacity: 1;
+  }
+
+
+  /* disable variations */
+  .ui.secondary.item.menu > .item {
+    margin: 0em;
+  }
+
+  /*---------------------
+     Secondary Pointing
+  -----------------------*/
+
+  /* Item Types */
+  .ui.secondary.pointing.menu > .menu > .item:after,
+  .ui.secondary.pointing.menu > .item:after {
+    display: none;
+  }
+
+  /*---------------------
+     Secondary Vertical
+  -----------------------*/
+
+  /*--------------
+      Inverted
+  ---------------*/
+
+  /*---------------------
+     Inverted Vertical
+  ----------------------*/
+
+
+  /*--------------
+      Text Menu
+  ---------------*/
+
+  .ui.text.menu > .item {
+    height: auto !important;
+  }
+  .ui.text.menu > .item:before {
+    display: none !important;
+  }
+
+  /*--- fluid text ---*/
+  .ui.text.item.menu .item {
+    margin: 0em;
+  }
+
+  /*--- vertical text ---*/
+  .ui.vertical.text.menu:first-child {
+    margin-top: 0rem;
+  }
+  .ui.vertical.text.menu:last-child {
+    margin-bottom: 0rem;
+  }
+
+  /*--- hover ---*/
+  .ui.text.menu .item:hover {
+    opacity: 1;
+  }
+
+  /*--------------
+      Icon Only
+  ---------------*/
+
+  .ui.icon.menu,
+  .ui.vertical.icon.menu {
+    width: auto;
+    display: inline-block;
+    height: auto;
+  }
+  .ui.icon.menu > .item {
+    height: auto;
+    text-align: center;
+  }
+  .ui.icon.menu > .item > .icon {
+    display: block;
+    float: none !important;
+    opacity: 1;
+    margin: 0em auto !important;
+  }
+  .ui.icon.menu .icon:before {
+    opacity: 1;
+  }
+
+  /* Item Icon Only */
+  .ui.menu .icon.item .icon {
+    margin: 0em;
+  }
+
+  .ui.vertical.icon.menu {
+    float: none;
+  }
+
+  /*--------------
+     Labeled Icon
+  ---------------*/
+
+  .ui.labeled.icon.menu > .item > .icon {
+    display: block;
+  }
+
+
+
+  /*******************************
+             Variations
+  *******************************/
+
+
+
+  /*--------------
+      Inverted
+  ---------------*/
+
+
+  /*--------------
+      Selection
+  ---------------*/
+
+
+  /*--------------
+       Floated
+  ---------------*/
+
+  .ui.floated.menu {
+    float: left;
+  }
+  .ui.right.floated.menu {
+    float: right;
+  }
+
+
+
+  /*--------------
+       Fitted
+  ---------------*/
+
+  .ui.fitted.menu .item,
+  .ui.fitted.menu .item .menu .item,
+  .ui.menu .fitted.item {
+    padding: 0em;
+  }
+
+  /*--------------
+     Borderless
+  ---------------*/
+
+  .ui.borderless.menu .item:before,
+  .ui.borderless.menu .item .menu .item:before,
+  .ui.menu .borderless.item:before {
+    background-image: none;
+  }
+
+  /*-------------------
+         Compact
+  --------------------*/
+
+  .ui.compact.menu {
+    display: inline-block;
+    margin: 0em;
+    vertical-align: middle;
+  }
+  .ui.compact.vertical.menu {
+    width: auto !important;
+  }
+  .ui.compact.vertical.menu .item:last-child::before {
+    display: block;
+  }
+
+  /*-------------------
+          Fluid
+  --------------------*/
+
+  .ui.menu.fluid,
+  .ui.vertical.menu.fluid {
+    display: block;
+    width: 100% !important;
+  }
+
+
+  /*-------------------
+        Evenly Sized
+  --------------------*/
+
+  .ui.item.menu,
+  .ui.item.menu .item {
+    width: 100%;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    text-align: center;
+  }
+
+  .ui.menu.two.item .item {
+    width: percentage(1/2);
+  }
+  .ui.menu.three.item .item {
+    width: percentage(1/3);
+  }
+  .ui.menu.four.item .item {
+    width: percentage(1/4);
+  }
+  .ui.menu.five.item .item {
+    width: percentage(1/5);
+  }
+  .ui.menu.six.item .item {
+    width: percentage(1/6);
+  }
+  .ui.menu.seven.item .item {
+    width: percentage(1/7);
+  }
+  .ui.menu.eight.item .item {
+    width: percentage(1/8);
+  }
+  .ui.menu.nine.item .item {
+    width: percentage(1/9);
+  }
+  .ui.menu.ten.item .item {
+    width: percentage(1/10);
+  }
+  .ui.menu.eleven.item .item {
+    width: percentage(1/11)
+  }
+  .ui.menu.twelve.item .item {
+    width: percentage(1/12);
+  }
+
+  /*--------------
+       Fixed
+  ---------------*/
+
+  .ui.menu.fixed {
+    position: fixed;
+    z-index: 999;
+    margin: 0em;
+    border: none;
+    width: 100%;
+  }
+
+  .ui.menu.fixed.top {
+    top: 0px;
+    left: 0px;
+    right: auto;
+    bottom: auto;
+  }
+  .ui.menu.fixed.right {
+    top: 0px;
+    right: 0px;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    height: 100%;
+  }
+  .ui.menu.fixed.bottom {
+    bottom: 0px;
+    left: 0px;
+    top: auto;
+    right: auto;
+  }
+  .ui.menu.fixed.left {
+    top: 0px;
+    left: 0px;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: 100%;
+  }
+
+
+  /*-------------------
+         Pointing
+  --------------------*/
+
+  .ui.pointing.menu .active.item:after {
+    position: absolute;
+    content: "";
+  }
+
+  /* Don't double up pointers */
+  .ui.pointing.menu .active.item .menu .active.item:after {
+    display: none;
+  }
+
+  .ui.vertical.pointing.menu .active.item:after {
+    position: absolute;
+    bottom: auto;
+    left: auto;
+  }
+
+
+  /*--------------
+      Attached
+  ---------------*/
+
+  .ui.menu.attached {
+    margin: 0rem;
+  }
+  /*--------------
+       Sizes
+  ---------------*/
+}

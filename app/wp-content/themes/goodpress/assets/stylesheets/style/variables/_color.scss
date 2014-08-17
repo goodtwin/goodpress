@@ -1,0 +1,34 @@
+$palettes: (
+    neutral: (
+        dark:  #3d3834,
+        mid:   #dadfe1,
+        light: #fff
+    ),
+    brand: (
+        base:     #00b2e2,
+        red:      #eb0028,
+        yellow:   #ffc627
+    ),
+    grayscale: (
+        base: #3d3834
+    ),
+    info: (
+        base:     palette(brand),
+        success:  #5BBD72,
+        error:    palette(brand, red),
+        warning:  palette(brand, yellow)
+    ),
+    button: (
+        primary:   palette(brand),
+        secondary: palette(brand, yellow)
+    ),
+    social : (
+        facebook:  #3B579D,
+        twitter:   #4092CC,
+        googleplus:#D34836,
+        linkedin:  #1F88BE,
+        youtube:   #CC181E,
+        instagram: #49769C,
+        pinterest: #cb2027
+    )
+);

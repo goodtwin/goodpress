@@ -1,0 +1,92 @@
+/*
+ * # Semantic - basic.Icon (Basic)
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@mixin basic-icon-src {
+  /*******************************
+            Basic Icon
+  *******************************/
+
+  @font-face {
+    font-family: 'Basic Icons';
+    src: url(../assets/icons/basic.icons.eot);
+    src:
+      url(../assets/icons/basic.icons.eot?#iefix) format('embedded-opentype'),
+      url(../assets/icons/basic.icons.svg#basic.icons) format('svg'),
+      url(../assets/icons/basic.icons.woff) format('woff'),
+      url(../assets/icons/basic.icons.ttf) format('truetype')
+    ;
+
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: inherit;
+    text-transform: none;
+  }
+
+  i.basic.icon {
+    display: inline-block;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  }
+
+
+  /*--------------
+     Spacing Fix
+  ---------------*/
+
+
+  /*--------------
+       Aliases
+  ---------------*/
+
+
+  /*******************************
+               States
+  *******************************/
+
+
+  /*******************************
+             Variations
+  *******************************/
+
+  /*-------------------
+           Link
+  --------------------*/
+
+
+  /*-------------------
+        Circular
+  --------------------*/
+
+  /*-------------------
+        Flipped
+  --------------------*/
+
+  i.vertically.flipped.basic.icon {
+    transform: scale(1, -1);
+  }
+  i.horizontally.flipped.basic.icon {
+    transform: scale(-1, 1);
+  }
+
+  /*-------------------
+          Rotated
+  --------------------*/
+
+  i.left.rotated.basic.icon {
+    transform: rotate(-90deg);
+  }
+  i.right.rotated.basic.icon {
+    transform: rotate(90deg);
+  }
+}

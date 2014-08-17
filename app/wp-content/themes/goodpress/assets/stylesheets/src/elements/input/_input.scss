@@ -1,0 +1,147 @@
+/*
+ * # Semantic - Input
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@mixin input-src {
+  /*******************************
+             Standard
+  *******************************/
+
+
+  /*--------------------
+          Inputs
+  ---------------------*/
+
+  .ui.input {
+    display: inline-block;
+    position: relative;
+  }
+  .ui.input input {
+    width: 100%;
+    outline: none;
+  }
+
+
+  /*--------------------
+        Placeholder
+  ---------------------*/
+
+
+  /*******************************
+              States
+  *******************************/
+
+  /*--------------------
+          Active
+  ---------------------*/
+
+  /*--------------------
+          Loading
+  ---------------------*/
+
+  .ui.loading.input > .icon:before,
+  .ui.loading.input > .icon:after {
+    display: none;
+  }
+
+  /*--------------------
+          Focus
+  ---------------------*/
+
+
+  /*--------------------
+          Error
+  ---------------------*/
+
+  /*******************************
+             Variations
+  *******************************/
+
+
+  /*--------------------
+        Transparent
+  ---------------------*/
+
+  .ui.transparent.input input {
+    border: none;
+    background-color: transparent;
+  }
+
+
+  /*--------------------
+           Icon
+  ---------------------*/
+
+  .ui.icon.input > .icon {
+    cursor: default;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+  }
+  .ui.icon.input > .link.icon {
+    cursor: pointer;
+  }
+
+  /* Left Side */
+  .ui.left.icon.input > .icon {
+    right: auto;
+    left: 1px;
+  }
+  .ui.left.icon.input > .circular.icon {
+    right: auto;
+    left: 0.5em;
+  }
+
+  /* Focus */
+  .ui.icon.input > input:focus ~ .icon {
+    opacity: 1;
+  }
+
+  /*--------------------
+          Labeled
+  ---------------------*/
+
+  /*--------------------
+          Action
+  ---------------------*/
+
+  .ui.action.input {
+    display: table;
+  }
+
+  .ui.action.input > input {
+    display: table-cell;
+    border-right: none;
+  }
+  .ui.action.input > .button,
+  .ui.action.input > .buttons {
+    display: table-cell;
+    white-space: nowrap;
+  }
+  .ui.action.input > .button > .icon,
+  .ui.action.input > .buttons > .button > .icon {
+    display: inline;
+    vertical-align: top;
+  }
+
+  .ui.fluid.action.input {
+    display: table;
+    width: 100%;
+  }
+
+  /*--------------------
+          Fluid
+  ---------------------*/
+
+  .ui.fluid.input {
+    display: block;
+  }
+}

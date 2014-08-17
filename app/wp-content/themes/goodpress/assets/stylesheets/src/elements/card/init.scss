@@ -1,0 +1,5 @@
+@import "card";
+
+@if use(card) {
+  @include card-src;
+}

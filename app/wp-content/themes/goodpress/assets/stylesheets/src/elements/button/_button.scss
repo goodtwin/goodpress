@@ -1,0 +1,427 @@
+/*
+ * # Semantic - Button
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+@mixin button-src {
+  /*******************************
+              Button
+  *******************************/
+
+  /* Prototype */
+  .ui.button {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    outline: none;
+    border: none;
+    margin: 0em;
+    padding: 0.8em 1.5em;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+  }
+
+  /*******************************
+               Types
+  *******************************/
+
+  /*-------------------
+         Animated
+  --------------------*/
+
+  .ui.animated.button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ui.animated.button .visible.content {
+    position: relative;
+  }
+  .ui.animated.button .hidden.content {
+    position: absolute;
+    width: 100%;
+  }
+
+  /* Horizontal */
+  .ui.animated.button .visible.content,
+  .ui.animated.button .hidden.content {
+    transition: right 0.3s ease 0s;
+  }
+  .ui.animated.button .visible.content {
+    left: auto;
+    right: 0%;
+  }
+  .ui.animated.button .hidden.content {
+    top: 50%;
+    left: auto;
+    right: -100%;
+    margin-top: -0.55em;
+  }
+  .ui.animated.button:hover .visible.content {
+    left: auto;
+    right: 200%;
+  }
+  .ui.animated.button:hover .hidden.content {
+    left: auto;
+    right: 0%;
+  }
+
+  /* Vertical */
+  .ui.vertical.animated.button .visible.content,
+  .ui.vertical.animated.button .hidden.content {
+    transition: top 0.3s ease 0s, transform 0.3s ease 0s;
+  }
+  .ui.vertical.animated.button .visible.content {
+    transform: translateY(0%);
+    right: auto;
+  }
+  .ui.vertical.animated.button .hidden.content {
+    top: -100%;
+    left: 0%;
+    right: auto;
+  }
+  .ui.vertical.animated.button:hover .visible.content {
+    transform: translateY(200%);
+    right: auto;
+  }
+  .ui.vertical.animated.button:hover .hidden.content {
+    top: 50%;
+    right: auto;
+  }
+
+  /* Fade */
+  .ui.fade.animated.button .visible.content,
+  .ui.fade.animated.button .hidden.content {
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  }
+  .ui.fade.animated.button .visible.content {
+    left: auto;
+    right: auto;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .ui.fade.animated.button .hidden.content {
+    opacity: 0;
+    left: 0%;
+    right: auto;
+    transform: scale(1.2);
+  }
+  .ui.fade.animated.button:hover .visible.content {
+    left: auto;
+    right: auto;
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  .ui.fade.animated.button:hover .hidden.content {
+    left: 0%;
+    right: auto;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+
+  /*******************************
+             Variations
+  *******************************/
+
+
+  /*-------------------
+         Floated
+  --------------------*/
+
+  .ui.left.floated.buttons,
+  .ui.left.floated.button {
+    float: left;
+    margin-right: 0.25em;
+  }
+  .ui.right.floated.buttons,
+  .ui.right.floated.button {
+    float: right;
+    margin-left: 0.25em;
+  }
+
+  /*--------------
+      Icon Only
+  ---------------*/
+
+  .ui.icon.buttons .button,
+  .ui.icon.button {
+    padding: 0.8em;
+  }
+  .ui.icon.buttons .button > .icon,
+  .ui.icon.button > .icon {
+    margin: 0em;
+    vertical-align: top;
+  }
+
+
+
+  /*-------------------
+          Basic
+  --------------------*/
+
+  .ui.basic.buttons .button,
+  .ui.basic.button {
+    background-color: transparent !important;
+    text-transform: none;
+  }
+
+
+  /*--------------
+     Labeled Icon
+  ---------------*/
+
+  .ui.labeled.icon.buttons .button,
+  .ui.labeled.icon.button {
+    position: relative;
+    padding-left: 4em !important;
+    padding-right: 1.4em !important;
+  }
+
+  .ui.labeled.icon.buttons > .button > .icon,
+  .ui.labeled.icon.button > .icon {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    width: 2.75em;
+    height: 100%;
+    padding-top: 0.8em;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .ui.right.labeled.icon.button {
+    padding-left: 1.4em !important;
+    padding-right: 4em !important;
+  }
+  .ui.left.fluid.labeled.icon.button,
+  .ui.right.fluid.labeled.icon.button {
+    padding-left: 1.4em !important;
+    padding-right: 1.4em !important;
+  }
+
+  .ui.right.labeled.icon.button .icon {
+    left: auto;
+    right: 0em;
+  }
+
+
+
+
+  /*--------------
+      Circular
+  ---------------*/
+
+  .ui.circular.button {
+    border-radius: 10em;
+  }
+
+
+  /*--------------
+       Attached
+  ---------------*/
+
+  .ui.attached.button {
+       display: block;
+
+      &.left {
+        display: inline-block;
+        border-left: none;
+        padding-right: 0.75em;
+        text-align: right;
+      }
+      &.right {
+        display: inline-block;
+        padding-left: 0.75em;
+        text-align: left;
+      }
+  }
+
+  /* Plural Attached */
+  .attached.ui.buttons {
+    margin: 0px;
+
+      /* Bottom Side */
+      &.bottom {
+        margin-top: -1px;
+      }
+
+      /* Left Side */
+      &.left {
+          margin-left: -1px;
+
+          .button:first-child,
+          .button:last-child {
+            margin-left: -1px;
+          }
+      }
+
+      /* Right Side */
+      &.right,
+      &.right .button {
+          margin-right: -1px;
+
+          .button:first-child,
+          .button:last-child {
+            margin-left: -1px;
+
+          }
+      }
+  }
+
+
+
+  /* Fluid */
+  .ui.fluid.buttons,
+  .ui.button.fluid,
+  .ui.fluid.buttons > .button {
+    display: block;
+    width: 100%;
+  }
+  .ui.fluid.buttons {
+      &.\32> .button,
+      &.two> .button {
+        width: precentage(1/2);
+      }
+      &.\33 > .button,
+      &.three > .button {
+        width: precentage(1/3);
+      }
+      &.\34 > .button,
+      &.four > .button {
+        width: precentage(1/4);
+      }
+      &.\35 > .button,
+      &.five > .button {
+        width: precentage(1/5);
+      }
+      &.\36 > .button,
+      &.six > .button {
+        width: precentage(1/6);
+      }
+      &.\37 > .button,
+      &.seven > .button {
+        width: precentage(1/7);
+      }
+      &.\38 > .button,
+      &.eight > .button {
+        width: precentage(1/8);
+      }
+      &.\39 > .button,
+      &.nine > .button {
+        width: precentage(1/9);
+      }
+      &.\31\30 > .button,
+      &.ten > .button {
+        width: precentage(1/10);
+      }
+      &.\31\31 > .button,
+      &.eleven > .button {
+        width: precentage(1/11);
+      }
+      &.\31\32 > .button,
+      &.twelve > .button {
+        width: precentage(1/12);
+      }
+  }
+
+  /* Fluid Vertical Buttons */
+  .ui.fluid.vertical.buttons,
+  .ui.fluid.vertical.buttons > .button {
+    display: block;
+    width: auto;
+  }
+
+  .ui.\32.vertical.buttons > .button,
+  .ui.two.vertical.buttons > .button {
+    height: 50%;
+  }
+  .ui.\33.vertical.buttons > .button,
+  .ui.three.vertical.buttons > .button {
+    height: 33.333%;
+  }
+  .ui.\34.vertical.buttons > .button,
+  .ui.four.vertical.buttons > .button {
+    height: 25%;
+  }
+  .ui.\35.vertical.buttons > .button,
+  .ui.five.vertical.buttons > .button {
+    height: 20%;
+  }
+  .ui.\36.vertical.buttons > .button,
+  .ui.six.vertical.buttons > .button {
+    height: 16.666%;
+  }
+  .ui.\37.vertical.buttons > .button,
+  .ui.seven.vertical.buttons > .button {
+    height: 14.285%;
+  }
+  .ui.\38.vertical.buttons > .button,
+  .ui.eight.vertical.buttons > .button {
+    height: 12.500%;
+  }
+  .ui.\39.vertical.buttons > .button,
+  .ui.nine.vertical.buttons > .button {
+    height: 11.11%;
+  }
+  .ui.\31\30.vertical.buttons > .button,
+  .ui.ten.vertical.buttons > .button {
+    height: 10%;
+  }
+  .ui.\31\31.vertical.buttons > .button,
+  .ui.eleven.vertical.buttons > .button {
+    height: 9.09%;
+  }
+  .ui.\31\32.vertical.buttons > .button,
+  .ui.twelve.vertical.buttons > .button {
+    height: 8.3333%;
+  }
+
+
+  /*******************************
+              Groups
+  *******************************/
+
+  .ui.buttons {
+      display: inline-block;
+      vertical-align: middle;
+
+      &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+
+      .button {
+          float: left;
+
+          &:first-child {
+              border-left: none;
+              margin-left: 0em;
+          }
+      }
+
+      /* Vertical  Style */
+      &.vertical {
+        display: inline-block;
+
+          .button {
+              display: block;
+              float: none;
+
+              &:first-child {
+                  margin-top: 0px;
+              }
+          }
+      }
+  }
+}

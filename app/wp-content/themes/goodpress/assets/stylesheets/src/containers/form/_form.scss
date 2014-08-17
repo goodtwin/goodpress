@@ -1,0 +1,123 @@
+/*
+ * # Semantic - Form
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@mixin form-src {
+  /*******************************
+             Standard
+  *******************************/
+
+  /*--------------------
+          Form
+  ---------------------*/
+
+  .ui.form {
+    position: relative;
+    max-width: 100%;
+  }
+  .ui.form :first-child {
+    margin-top: 0em;
+  }
+  .ui.form :last-child {
+    margin-bottom: 0em;
+  }
+
+  /*--------------------
+          Content
+  ---------------------*/
+
+  /*--------------------
+          Field
+  ---------------------*/
+
+  .ui.form .field {
+    clear: both;
+  }
+
+  /*--------------------
+          Labels
+  ---------------------*/
+
+  .ui.form .field > label {
+    display: block;
+  }
+
+  /*--------------------
+      Standard Inputs
+  ---------------------*/
+
+
+  .ui.form textarea,
+  .ui.form input[type="text"],
+  .ui.form input[type="email"],
+  .ui.form input[type="date"],
+  .ui.form input[type="password"],
+  .ui.form input[type="number"],
+  .ui.form input[type="url"],
+  .ui.form input[type="tel"],
+  .ui.form .ui.input {
+    width: 100%;
+  }
+
+  .ui.form textarea,
+  .ui.form input[type="text"],
+  .ui.form input[type="email"],
+  .ui.form input[type="date"],
+  .ui.form input[type="password"],
+  .ui.form input[type="number"],
+  .ui.form input[type="url"],
+  .ui.form input[type="tel"] {
+    outline: none;
+  }
+
+  .ui.form textarea,
+  .ui.form input[type="checkbox"] {
+    vertical-align: top;
+  }
+
+  /*--------------------
+         Dividers
+  ---------------------*/
+
+  .ui.form .divider {
+    clear: both;
+  }
+
+
+  /*--------------------
+     Types of Messages
+  ---------------------*/
+
+  .ui.form .info.message,
+  .ui.form .warning.message,
+  .ui.form .error.message {
+    display: none;
+  }
+
+  /* Assumptions */
+  .ui.form .message:first-child {
+    margin-top: 0px;
+  }
+
+  /*--------------------
+     Validation Prompt
+  ---------------------*/
+
+  .ui.form .field .prompt.label {
+    white-space: nowrap;
+  }
+
+  .ui.form .inline.field .prompt:before {
+    bottom: auto;
+    right: auto;
+    top: 50%;
+    left: 0em;
+  }
+}

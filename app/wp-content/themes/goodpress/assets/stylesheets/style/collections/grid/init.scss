@@ -1,0 +1,5 @@
+@import "prototype";
+
+@if use-theme(grid) {
+  @include grid-prototype;
+}

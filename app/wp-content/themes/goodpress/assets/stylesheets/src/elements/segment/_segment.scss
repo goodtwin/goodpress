@@ -1,0 +1,164 @@
+/*
+ * # Semantic - Segment
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+@mixin segment-src {
+  /*******************************
+              Segment
+  *******************************/
+
+  .ui.segment {
+    position: relative;
+  }
+
+  .ui.segment:first-child {
+    margin-top: 0em;
+  }
+  .ui.segment:last-child {
+    margin-bottom: 0em;
+  }
+
+  .ui.segment:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .ui.vertical.segment {
+    margin: 0em;
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+  .ui.vertical.segment:first-child {
+    padding-top: 0em;
+  }
+
+  .ui.horizontal.segment {
+    margin: 0em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+  }
+  .ui.horizontal.segment:first-child {
+    padding-left: 0em;
+  }
+
+  /*-------------------
+      Loose Coupling
+  --------------------*/
+
+  /* No padding on edge content */
+  .ui.segment > :first-child {
+    margin-top: 0em;
+  }
+  .ui.segment > :last-child {
+    margin-bottom: 0em;
+  }
+
+
+  /*******************************
+               Types
+  *******************************/
+
+
+  /*-------------------
+         Circular
+  --------------------*/
+
+  .ui.circular.segment {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 500em;
+  }
+
+
+  /*******************************
+             Variations
+  *******************************/
+
+
+  /*-------------------
+         Basic
+  --------------------*/
+
+  .ui.basic.segment {
+    position: relative;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0px;
+  }
+  .ui.basic.segment:first-child {
+    padding-top: 0em;
+  }
+  .ui.basic.segment:last-child {
+    padding-bottom: 0em;
+  }
+
+
+  /*-------------------
+         Fittted
+  --------------------*/
+
+  .ui.fitted.segment {
+    padding: 0em;
+  }
+
+
+
+  /*-------------------
+         Aligned
+  --------------------*/
+
+  .ui.left.aligned.segment {
+    text-align: left;
+  }
+  .ui.right.aligned.segment {
+    text-align: right;
+  }
+  .ui.center.aligned.segment {
+    text-align: center;
+  }
+  .ui.justified.segment {
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /*-------------------
+         Floated
+  --------------------*/
+
+  .ui.floated.segment,
+  .ui.left.floated.segment {
+    float: left;
+  }
+  .ui.right.floated.segment {
+    float: right;
+  }
+
+
+  /*-------------------
+        Attached
+  --------------------*/
+
+  .ui.segment.attached {
+    border-radius: 0px;
+    margin: 0em;
+  }
+
+  .ui.segment.top.attached:first-child {
+    margin-top: 0em;
+  }
+
+  .ui.segment.bottom.attached:last-child {
+    margin-bottom: 0em;
+  }
+}

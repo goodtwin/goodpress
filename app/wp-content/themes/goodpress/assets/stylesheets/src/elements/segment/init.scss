@@ -1,0 +1,5 @@
+@import "segment";
+
+@if use(segment) {
+  @include segment-src;
+}

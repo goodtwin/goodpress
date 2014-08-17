@@ -1,0 +1,118 @@
+/*
+ * # Semantic - Icon
+ * http://github.com/jlukic/semantic-ui/
+ *
+ *
+ * Copyright 2013 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+/*!
+ *  Font Awesome 3.2.1
+ *  the iconic font designed for Bootstrap
+ *  ------------------------------------------------------------------------------
+ *  The full suite of pictographic icons, examples, and documentation can be
+ *  found at http://fon.io.  Stay up to date on Twitter at
+ *  http://twitter.com/fon.
+ *
+ *  License
+ *  ------------------------------------------------------------------------------
+ *  - The Font Awesome font is licensed under SIL OFL 1.1 -
+ *    http://scripts.sil.org/OFL
+*/
+
+@mixin icons-src {
+  /*******************************
+               Icon
+  *******************************/
+
+  @font-face {
+    font-family: 'Icons';
+    src: url(../assets/icons/icons.eot);
+    src:
+      url(../assets/icons/icons.eot?#iefix) format('embedded-opentype'),
+      url(../assets/icons/icons.svg#icons) format('svg'),
+      url(../assets/icons/icons.woff) format('woff'),
+      url(../assets/icons/icons.ttf) format('truetype')
+    ;
+
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: inherit;
+    text-transform: none;
+  }
+
+  i.icon {
+    display: inline-block;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  }
+
+
+  /*--------------
+      Aliases
+  ---------------*/
+
+
+  /*--------------
+     Spacing Fix
+  ---------------*/
+
+  /*******************************
+               Types
+  *******************************/
+
+
+
+  /*******************************
+               States
+  *******************************/
+
+
+  /*******************************
+             Variations
+  *******************************/
+
+
+  /*-------------------
+           Link
+  --------------------*/
+
+
+  /*-------------------
+        Circular
+  --------------------*/
+
+
+  /*-------------------
+        Flipped
+  --------------------*/
+
+  i.flipped.icon,
+  i.horizontally.flipped.icon {
+    transform: scale(-1, 1);
+  }
+  i.vertically.flipped.icon {
+    transform: scale(1, -1);
+  }
+
+  /*-------------------
+        Rotated
+  --------------------*/
+
+  i.rotated.icon,
+  i.right.rotated.icon,
+  i.clockwise.rotated.icon {
+    transform: rotate(90deg);
+  }
+
+  i.left.rotated.icon,
+  i.counterclockwise.rotated.icon {
+    transform: rotate(-90deg);
+  }
+}
