@@ -290,8 +290,8 @@ module.exports = function( grunt ) {
   function(){
     var loadPaths = grunt.file.expand({}, [
       './',
-      'app/wp-content/themes/fitfarm/assets/stylesheets/',
-			'app/wp-content/themes/fitfarm/assets/stylesheets/chrome/',
+      'app/wp-content/themes/goodpress/assets/stylesheets/',
+			'app/wp-content/themes/goodpress/assets/stylesheets/chrome/',
       'node_modules/',
       'node_modules/bagel-*/node_modules/',
       'node_modules/**/node_modules/bagel-*/node_modules/'
