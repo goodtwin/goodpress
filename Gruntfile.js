@@ -57,29 +57,47 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		shared_config: {
+      style: {
+        options: {
+          name: "defaultConfig",
+          cssFormat: "dash",
+          useSassMaps: true
+        },
+        src: ['node_modules/**/bagel-*/config.yml', 'node_modules/bagel-*/config.yml', '<%= config.themeDir  %>/assets/stylesheets/config.yml'], // order matters,
+        dest: [
+          "<%= config.themeDir  %>/assets/stylesheets/config.scss"
+        ]
+      }
+    },
+
 		sass: {
-			dev: {
-				files: [{
-					expand: true,
-					cwd: '<%= config.themeDir  %>/assets/stylesheets/scss',
-					src: ['*.scss', '!_*.scss'],
-					dest: '<%= config.themeDir  %>/assets/stylesheets/css',
-					ext: '.css'
-				}]
-			}
-		},
+      options: {
+        loadPath: ['./', 'app/wp-content/themes/fitfarm/assets/stylesheets/', 'node_modules/']
+      },
+      dist: {
+        files : {
+          '<%= config.themeDir  %>/assets/stylesheets/style.css': '<%= config.themeDir  %>/assets/stylesheets/init.scss'
+        }
+      }
+    },
 
 		myth: {
-			dev: {
-				files: [{
-					expand: true,
-					cwd: '<%= config.themeDir  %>/assets/stylesheets/css',
-					src: ['*.css'],
-					dest: '<%= config.themeDir  %>/assets/stylesheets/css',
-					ext: '.css'
-				}]
-			}
+      options: {
+        sourcemap: true
+      },
+      dist: {
+        files: [
+          {
+            expand: true,
+            cwd: '<%= config.themeDir  %>/assets/stylesheets/',
+            src: ['**/*.css'],
+            dest: '<%= config.themeDir  %>/assets/stylesheets/'
+          }
+        ]
+      },
 		},
+
 
 		cssmin: {
 			dist: {
@@ -267,9 +285,25 @@ module.exports = function( grunt ) {
 
 	require('load-grunt-tasks')(grunt);
 
+	grunt.registerTask('bagel:dirs',
+  'used to create an array of bagel paths for use in sass pathing',
+  function(){
+    var loadPaths = grunt.file.expand({}, [
+      './',
+      'app/wp-content/themes/fitfarm/assets/stylesheets/',
+			'app/wp-content/themes/fitfarm/assets/stylesheets/chrome/',
+      'node_modules/',
+      'node_modules/bagel-*/node_modules/',
+      'node_modules/**/node_modules/bagel-*/node_modules/'
+    ]);
+    grunt.log.write(loadPaths.join(", "));
+    grunt.config.set('sass.options.loadPath', loadPaths);
+
+  });
+
 	grunt.registerTask('init', ['exec:initWordpress', 'exec:initConfig', 'exec:initPlugins']);
 	grunt.registerTask('default', ['compile']);
-	grunt.registerTask('compile', ['sass:dev', 'myth:dev']);
+	grunt.registerTask('compile', ['bagel:dirs', 'shared_config', 'sass:dist', 'myth:dist']);
 	grunt.registerTask('pr', ['compile', 'jshint']);
 	grunt.registerTask('build', ['pr', 'clean:dist', 'copy:dist', 'cssmin:dist', 'imagemin:dist', 'modernizr', 'replace:modernizr', 'uglify:dist' ]);
 	// DANGER ZONE: Will push the db also. If that's not what you want, just `rsync:*target*`

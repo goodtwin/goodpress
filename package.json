@@ -1,8 +1,15 @@
 {
   "author": "GoodTwin",
   "name": "goodpress",
-  "version": "0.1.1",
-  "dependencies": {},
+  "description": "GoodTwin's boilerplate WordPress theme.",
+  "version": "0.2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goodtwin/goodpress.git"
+  },
+  "dependencies": {
+    "bagel-core": "git://github.com/goodtwin/bagel-core.git#v0.1.13"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "~0.1.7",
@@ -14,8 +21,8 @@
     "grunt-contrib-copy": "~0.4.0",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-sass": "^0.7.3",
     "grunt-rsync": "~0.1.1",
-    "grunt-sass": "~0.6.0",
     "grunt-requirejs": "~0.4.0",
     "grunt-text-replace": "~0.3.6",
     "grunt-deployments": "~0.1.5",
@@ -25,6 +32,7 @@
     "grunt-shell": "^0.7.0",
     "load-grunt-tasks": "^0.6.0",
     "lodash": "^2.4.1",
-    "grunt-exec": "^0.4.6"
+    "grunt-exec": "^0.4.6",
+    "grunt-shared-config": "^0.3.7"
   }
 }
