@@ -301,7 +301,7 @@ module.exports = function( grunt ) {
 
   });
 
-	grunt.registerTask('init', ['exec:initWordpress', 'exec:initConfig', 'exec:initPlugins']);
+	grunt.registerTask('init', ['exec:initWordpress', 'exec:initConfig', 'exec:installWordpress', 'exec:initPlugins']);
 	grunt.registerTask('default', ['compile']);
 	grunt.registerTask('compile', ['bagel:dirs', 'shared_config', 'sass:dist', 'myth:dist']);
 	grunt.registerTask('pr', ['compile', 'jshint']);
