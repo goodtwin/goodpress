@@ -1,5 +1,0 @@
-@import "search";
-
-@if use(search) {
-  @include search-src;
-}

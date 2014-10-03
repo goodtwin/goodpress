@@ -1,0 +1,369 @@
+@mixin button-mytheme {
+	/* Button
+	========================================
+	======================================== */
+	.ui.button {
+		background-color: palette(neutral, white);
+		color: palette(mytheme, red);
+		border: 2px solid palette(mytheme, red);
+		font-size: 1rem;
+		font-style: normal;
+		border-radius: base(round);
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+
+	/* States
+	======================================== */
+	.ui.button {
+		/**
+		 * Active
+		 */
+		&.active{
+			color: palette(neutral, white);
+			background-color: palette(mytheme, red);
+		}
+		/**
+		 * Hover
+		 */
+		&:hover,
+		&.active:hover  {
+			background-color: palette(mytheme, red, 10);
+		}
+		/**
+		 * Down
+		 */
+		&:active,
+		&.active:active {
+			color: palette(neutral, white);
+			background-color: palette(mytheme, red);
+		}
+		/**
+		 * Loading
+		 */
+		&.loading {
+			position: relative;
+			cursor: default;
+			background-color: #FFFFFF !important;
+			color: transparent !important;
+			transition: all 0s linear;
+
+			&:after {
+				position: absolute;
+				top: 0em;
+				left: 0em;
+				width: 100%;
+				height: 100%;
+				content: '';
+				background: transparent url(../assets/images/loader-mini.gif) no-repeat 50% 50%;
+			}
+
+			&.labeled.icon .icon {
+				background-color: transparent;
+				box-shadow: none;
+			}
+		}
+		/**
+		 * Disabled
+		 */
+		&.disabled,
+		&.disabled:hover,
+		&.disabled.active {
+			background-color: #DDDDDD !important;
+			cursor: default;
+			color: rgba(0, 0, 0, 0.5) !important;
+			opacity: 0.3 !important;
+		}
+	}
+
+	/* Types
+	======================================== */
+	.ui.button {
+		/**
+		 * Primary
+		 */
+		&.primary {
+			background-color: palette(mytheme, blue);
+			color: palette(neutral, white);
+			border: 2px solid palette(mytheme, blue);
+
+			&:hover,
+			&.active {
+				background-color: palette(mytheme, blue, 105);
+			}
+
+			&:active {
+				background-color: palette(mytheme, blue, 110);
+			}
+		}
+		/**
+		 * Secondary
+		 */
+		&.secondary {
+			background-color: palette(neutral, white);
+			color: palette(mytheme, blue);
+			border: 2px solid palette(mytheme, blue);
+
+			&:hover,
+			&.active {
+				background-color: palette(mytheme, blue, 5);
+			}
+
+			&:active {
+				background-color: palette(mytheme, blue, 10);
+			}
+		}
+		/**
+		 * Social
+		 */
+		/* Facebook */
+		&.facebook {
+			background-color: palette(social, facebook);
+			color: palette(neutral, white);
+			border:none;
+
+			&:hover {
+				background-color: palette(social, facebook, 110);
+			}
+
+			&:active {
+				background-color: palette(social, facebook, 105);
+			}
+		}
+
+		/* Twitter */
+		&.twitter {
+			background-color: palette(social, twitter);
+			color: palette(neutral, white);
+			border:none;
+
+			&:hover {
+				background-color: palette(social, twitter, 110);
+			}
+
+			&:active {
+				background-color: palette(social, twitter, 105);
+			}
+		}
+
+		/* Google Plus */
+		&.google.plus {
+			background-color: palette(social, googleplus);
+			color: palette(neutral, white);
+			border:none;
+
+			&:hover {
+				background-color: palette(social, googleplus, 110);
+			}
+
+			&:active {
+				background-color: palette(social, googleplus, 105);
+			}
+		}
+
+		/* LinkedIn */
+		&.linkedin {
+			background-color: palette(social, linkedin);
+			color: palette(neutral, white);
+			border:none;
+
+			&:hover {
+				background-color: palette(social, linkedin, 110);
+			}
+
+			&:active {
+				background-color: palette(social, linkedin, 105);
+			}
+		}
+
+		/* YouTube */
+		&.youtube {
+			background-color: palette(social, youtube);
+			color: palette(neutral, white);
+			border:none;
+
+			&:hover {
+				background-color: palette(social, youtube, 110);
+			}
+
+			&:active {
+				background-color: palette(social, youtube, 105);
+			}
+		}
+
+		/* Instagram */
+		&.instagram {
+			background-color: palette(social, instagram);
+			color: palette(neutral, white);
+			border:none;
+
+			&:hover {
+				background-color: palette(social, instagram, 110);
+			}
+
+			&:active {
+				background-color: palette(social, instagram, 105)
+			}
+		}
+
+		/* Pinterest */
+		&.pinterest {
+			background-color: palette(social, pinterest);
+			color: palette(neutral, white);
+			border:none;
+
+			&:hover {
+				background-color: palette(social, pinterest, 110);
+			}
+
+			&:active {
+				background-color: palette(social, pinterest, 105);
+			}
+		}
+
+		/* Positive */
+		&.positive {
+			background-color: palette(info, success);
+			color: palette(neutral, white);
+			border: none;
+
+			&:hover {
+				background-color: palette(info, success, 110);
+			}
+
+			&:active {
+				background-color: palette(info, success, 105);
+			}
+		}
+
+		/* negative */
+		&.negative {
+			background-color: palette(info, error);
+			color: palette(neutral, white);
+			border: none;
+
+			&:hover {
+				background-color: palette(info, error, 110);
+			}
+
+			&:active {
+				background-color: palette(info, error, 105);
+			}
+		}
+		/**
+		 * Icon
+		 */
+		> .icon {
+			margin-right: 0.6em;
+		}
+	}
+
+	/* Variations
+	======================================== */
+	.ui.button, .ui.buttons {
+
+		&.basic,
+		&.basic .button  {
+			background-color: transparent!important;
+			color: palette(neutral, black)!important;
+			border: none;
+		}
+		/**
+		 * Sizes
+		 */
+		font-size: 1rem;
+
+		&.mini,
+		&.mini .button {
+			font-size: 0.8rem;
+		}
+
+		&.tiny,
+		&.tiny .button {
+			font-size: 0.875em;
+		}
+
+		&.small,
+		&.small .button {
+			font-size: 0.875rem;
+		}
+
+		&.large,
+		&.large .button {
+			font-size: 1.125rem;
+		}
+
+		&.big,
+		&.big .button {
+			font-size: 1.25rem;
+		}
+
+		&.huge,
+		&.huge .button {
+			font-size: 1.375rem;
+		}
+
+		&.massive,
+		&.massive .button {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+		/**
+		 * Toggle
+		 */
+		/* Toggle (Modifies active state to give affordances) */
+		&.toggle .active.button,
+		&.toggle.active {
+			background-color: #5BBD72 !important;
+			color: #FFFFFF !important;
+
+			&:hover {
+				background-color: #58CB73 !important;
+			}
+		}
+		/**
+		 * Labeled Icon
+		 */
+		&.labeled.icon > .button > .icon,
+		&.labeled.icon > .icon {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+	}
+
+	.ui.buttons:not(.vertical) {
+		.ui.button {
+			border-radius: 0;
+			border-right: none;
+
+			&:first-child {
+				border-radius: base(round) 0 0 base(round);
+			}
+
+			&:last-child {
+				border-radius: 0 base(round) base(round) 0;
+				border-right: 2px solid palette(mytheme, red);
+			}
+		}
+	}
+	.ui.vertical.buttons {
+		.ui.button {
+			border-radius: 0;
+			border-bottom: none;
+			border-right: 2px solid palette(mytheme, red);
+
+			&:first-child {
+				border-radius: base(round) base(round) 0 0;
+			}
+
+			&:last-child {
+				border-radius: 0 0 base(round) base(round);
+				border-bottom: 2px solid palette(mytheme, red);
+			}
+		}
+	}
+
+	.ui.basic.buttons {
+		.ui.button {
+			border: none!important;
+		}
+	}
+}

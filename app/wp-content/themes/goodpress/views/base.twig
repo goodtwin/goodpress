@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    {% include 'partials/global/head.twig' %}
+    <body>
+      <header role="banner" class="header">
+        {% include 'partials/global/header.twig' %}
+      </header>
+
+    	<section role="main" class="main">
+        {% block main %}
+        {% endblock %}
+			</section>
+
+      <footer role="footer" class="footer">
+        {% include 'partials/global/footer.twig' %}
+      </footer>
+
+      <nav id="nav" role="navigation" class="">
+      	<ul class="">
+          {% for item in menu.get_items %}
+            <li class="item {{item.classes | join(' ')}}">
+              <a class="" href="{{item.get_link}}">{{item.title}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <!-- Load Javascripts via functions.php -->
+      {{ function('load_footer_scripts')}}
+	    {{ function('wp_footer') }}
+			<script>
+	    (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
+	    (f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
+	    l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	    ga('create', 'UA-XXXXXXXX-XX');
+	    ga('send', 'pageview');
+	    </script>
+    </body>
+</html>

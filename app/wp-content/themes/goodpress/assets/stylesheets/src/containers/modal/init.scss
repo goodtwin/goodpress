@@ -1,5 +1,0 @@
-@import "modal";
-
-@if use(modal) {
-  @include modal-src;
-}

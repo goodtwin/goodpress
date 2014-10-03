@@ -1,5 +1,0 @@
-@import "loader";
-
-@if use(loader) {
-  @include loader-src;
-}

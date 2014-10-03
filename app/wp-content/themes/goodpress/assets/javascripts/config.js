@@ -2,7 +2,7 @@
 'use strict';
 
 require.config({
-	baseUrl: '/wp-content/themes/bpi/assets/javascripts/',
+	baseUrl: '/wp-content/themes/goodpress/assets/javascripts/',
 	shim: {
 		jquery: {
 			exports: '$'

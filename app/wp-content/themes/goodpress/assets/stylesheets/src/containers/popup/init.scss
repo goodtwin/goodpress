@@ -1,5 +1,0 @@
-@import "popup";
-
-@if use(popup) {
-  @include popup-src;
-}

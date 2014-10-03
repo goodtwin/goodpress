@@ -1,3 +1,3 @@
 # GoodPress
 
-More like Wordlessless, amirite?
+*More like Wordlessless, amirite?*

@@ -1,0 +1,6 @@
+{% extends 'base.twig' %}
+{% block main %}
+	{% for post in posts %}
+		{{post.post_title}}
+	{% endfor %}
+{% endblock %}

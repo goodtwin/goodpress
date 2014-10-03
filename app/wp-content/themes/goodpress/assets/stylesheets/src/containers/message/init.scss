@@ -1,5 +1,0 @@
-@import "message";
-
-@if use(message) {
-  @include message-src;
-}

@@ -1,5 +1,0 @@
-@import "image";
-
-@if use(image) {
-  @include image-src;
-}

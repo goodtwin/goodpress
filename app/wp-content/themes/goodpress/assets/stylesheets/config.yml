@@ -1,0 +1,148 @@
+#base:
+#  breakpoints:
+#    mama-bear: 'screen and (min-width: 780px)'
+button:
+  include: true
+  theme:
+    prototype: false
+    mytheme: true
+card:
+  include: true
+  theme:
+    prototype: false
+checkbox:
+  include: true
+  theme:
+    prototype: false
+divider:
+  include: true
+  theme:
+    prototype: false
+icons:
+  include: true
+  theme:
+    prototype: false
+image:
+  include: true
+  theme:
+    prototype: false
+input:
+  include: true
+  theme:
+    prototype: false
+label:
+  include: true
+  theme:
+    prototype: false
+loader:
+  include: true
+  theme:
+    prototype: false
+media:
+  include: true
+  theme:
+    prototype: false
+progress:
+  include: true
+  theme:
+    prototype: false
+reveal:
+  include: true
+  theme:
+    prototype: false
+segment:
+  include: true
+  theme:
+    prototype: false
+step:
+  include: true
+  theme:
+    prototype: false
+dropdown:
+  include: true
+  theme:
+    prototype: false
+form:
+  include: true
+  theme:
+    prototype: false
+menu:
+  include: true
+  theme:
+    prototype: false
+message:
+  include: true
+  theme:
+    prototype: false
+modal:
+  include: true
+  theme:
+    prototype: false
+nag:
+  include: true
+  theme:
+    prototype: false
+popup:
+  include: true
+  theme:
+    prototype: false
+search:
+  include: true
+  theme:
+    prototype: false
+sidebar:
+  include: true
+  theme:
+    prototype: false
+accordion:
+  include: true
+  theme:
+    prototype: false
+grid:
+  include: true
+  theme:
+    prototype: false
+tab:
+  include: true
+  theme:
+    prototype: false
+table:
+  include: true
+  theme:
+    prototype: false
+mediaquery:
+  palm:
+    include: true
+    widths: true
+    layout: true
+    spacing: true
+  lap:
+    include: true
+    widths: true
+    layout: true
+    spacing: true
+  lap-and-up:
+    include: true
+    widths: true
+    layout: true
+    spacing: true
+  portable:
+    include: true
+    widths: true
+    layout: true
+    spacing: true
+  desk:
+    include: true
+    widths: true
+    layout: true
+    spacing: true
+  desk-wide:
+    include: false
+    widths: true
+    layout: true
+    spacing: true
+  under-desk-wide:
+    include: true
+    widths: true
+    layout: true
+    spacing: true

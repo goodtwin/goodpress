@@ -1,5 +1,0 @@
-@import "progress";
-
-@if use(progress) {
-  @include progress-src;
-}

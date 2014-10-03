@@ -1,0 +1,21 @@
+/**
+ * First we grab our component config
+ * These will override any defaults
+ * Set within source.
+ * Config sets which components to include
+ * as well as which theme/style to incorporate.
+ * This allows one to work through each component's
+ * style while have a theme fallback for the unfinished
+ * components.
+ */
+@import "config";
+
+/**
+ * Import all of bagel
+ */
+@import "bagel-core/init";
+
+/**
+ * Import all of our component styles
+ */
+@import "chrome/init";
